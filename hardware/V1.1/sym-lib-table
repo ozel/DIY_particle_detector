@@ -1,0 +1,3 @@
+(sym_lib_table
+  (lib (name DIY_detector-custom-parts)(type Legacy)(uri ${KIPRJMOD}/DIY_detector-custom-parts.lib)(options "")(descr ""))
+)

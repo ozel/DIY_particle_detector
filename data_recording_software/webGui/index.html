@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Oscilloscope</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="js/msgpack.min.js"></script>
+  <script src="js/FileSaver.js"></script>
+</head>
+<body>
+<div class="header">
+  <div>DIY Particle Detector <br> <i>Pulse Recorder</i></div>
+</div>
+<div class="main">
+  <div class="left">
+    <div class="left">Recording since:&nbsp;</div>
+    <div id='time'  class="left"> 00:00:00</div><br>
+    <div>Triggered pulses:</div>
+    <div id="statistic" class="left">sum: 0 &emsp;&emsp;&emsp;  e&#8315;: 0 &emsp;&emsp;&emsp;   &alpha;: 0</div>
+  </div>
+  <div class="right"> 
+    <div class="right" id="rate">sample rate:<br>?</div>
+    Trigger:<input id="thlUp" class="triggerButton" type="button" value="&#8679;" /><input id="thlDown" class="triggerButton" type="button" value="&#8681;" />
+  </div>
+  
+  <div class="right">
+    <input id="reset" class="button" type="button" value="reset" />
+    <input id="saveData" class="button" type="button" value="save" />
+  </div>
+</div>
+<div id="pulse_scope">
+  <script src="js/pulse_recorder.js"></script>
+</div>
+</body>
+</html>

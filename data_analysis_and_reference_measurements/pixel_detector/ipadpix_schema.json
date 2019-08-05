@@ -1,0 +1,26 @@
+{ "name": "tpxFrame",
+  "type": "record",
+  "fields":[ {
+ 			"name": "clusterArray",
+ 			"type": {
+ 				"type": "array", 
+ 				"items": {
+       					"name": "Cluster",
+       					"type": "record",
+       					"fields" : [
+                                    {"name": "id", "type": "int"},
+                                    {"name": "energy", "type": "float"},
+                                    {"name": "center_x", "type": "float"},
+                                    {"name": "center_y", "type": "float"},
+                                    {"name": "xi", "type": {
+                                    "type": "array", "items":"int"}},
+                                    {"name": "yi", "type": {
+                                    "type": "array", "items":"int"}},
+                                    {"name": "ei", "type": {
+                                    "type": "array", "items":"int"}}
+              			]
+				}
+       		}
+    	}
+    ]
+}

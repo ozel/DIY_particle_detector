@@ -1,0 +1,8 @@
+'BPX61'              ! Detector name
+1.495                ! Detector radius (mm)
+195.0                ! Resolution (FWHM) (keV)
+120.0,1000.0,200.0   ! Fast component (keV) & Intermediate component (1/µ) (keV) & Slow component (1/η) (keV)
+1.0,5.0,1.0          ! Total tailing & Fast/Intermediate area ratio & Slow / intermediate area ratio
+0.01                 ! Dead layer thickness (µm)
+14,28                ! Dead layer Z & Dead layer A
+50.0                 ! Thickness (active volume) (µm)

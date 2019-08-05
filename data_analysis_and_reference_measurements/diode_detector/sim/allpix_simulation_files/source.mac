@@ -1,0 +1,46 @@
+/gps/source/intensity 1
+
+#/gps/particle alpha
+#/gps/pos/type Plane
+#/gps/pos/shape Circle
+#/gps/pos/radius 20 mm
+
+
+#/gps/ene/type User
+#/gps/hist/type energy
+
+# spectra	
+# Am-241
+#/gps/hist/point  5.38800   1.66  	
+#/gps/hist/point  5.44280  13.10  	
+#/gps/hist/point  5.48556  84.80	
+#/gps/hist/point  5.51150   0.23	
+#/gps/hist/point  5.54450   0.37
+
+# Gd-148
+#/gps/hist/point   3.183     100.0
+
+#/gps/ang/mintheta 0 deg
+#/gps/ang/maxtheta 3 deg
+#/gps/ang/type iso
+
+#/gps/source/add 1
+
+# Sr-90
+#/gps/particle ion
+#/gps/ion 38 90 0 0
+#/gps/ene/mono 0 eV
+
+# K-40
+/gps/particle ion
+/gps/ion 19 40 0 0
+/gps/ene/mono 0 eV
+
+
+/gps/pos/type Plane
+/gps/pos/shape Circle
+/gps/pos/radius 17 mm
+
+/gps/ang/type iso
+
+#/gps/source/list

@@ -1,0 +1,74 @@
+n                    ! Geometric Efficiency
+y                    ! Self absorption
+11.0001              ! Sdd (mm)
+'/home/marvin/Downloads/Aasi/bin/NuclideLibrary.xml' ! Libraryfile
+'Pu-239'&3108000&'Am-241'&3422000&'Cm-244'&2258000 ! Nuclide name
+3.183                ! Line energy
+b                    ! Ball or ellipsoid
+1.0E-6              
+n                    ! Spherical shell geometry
+2                    ! number of particle material elements
+1.0E-6,0.,0.         ! Particle density (g/cm³) & unused1 & unused2
+92,238,1.0           ! Particle element Z & Particle element A & Particle element fraction
+8,16,2.0             ! Particle element Z & Particle element A & Particle element fraction
+33.0                 !  Energy bin
+1                    ! number of source material elements
+10.49,0.01,0.01      ! Source density (g/cm³) & Source thickness (cylindrical) (µm) & Source thickness fluct. (µm)
+78,195,1.0           ! Source element Z & Source element A & Source element fraction
+y                    ! Convex source
+0.01,0.01            ! Central thickness (µm) & Side thickness (µm)
+n                    ! Exponential depth distribution
+1.0,0.01             ! Percentage to distribute exponentially (%) & Halfdepth (µm)
+1                    ! Number of material layers
+4                    ! number of layer material elements
+0.001123,11000.0,0.01 ! Layer density (g/cm³) & Layer thickness (µm) & Layer thickness fluct. (µm)
+7,14,4.3819785       ! Layer element Z & Layer element A & Layer element fraction
+8,16,2.1098413       ! Layer element Z & Layer element A & Layer element fraction
+2,4,0.91778207       ! Layer element Z & Layer element A & Layer element fraction
+18,40,0.030592736    ! Layer element Z & Layer element A & Layer element fraction
+y                    ! Many particles randomly
+9.5                  ! Source radius (mm)
+n                    ! Lognormal distribution
+1.0,1.2              ! Count mean diameter (µm) & Geometric standard deviation
+5.0                  ! Diameter ceiling (µm)
+0.0,0.0              ! Location: X coordinate (mm) &                Y coordinate (mm)
+2258000              !  Number of decays
+n                    ! Emission to source-detector cone only
+1.0                  ! Include gaussian straggling
+0.1                  ! Integration step
+n                    ! Calculate coincidences
+1                    ! Line output
+n                    ! Include source backingplate
+1                    ! number of backingplate material elements
+21.46,2000.0,0.0     ! Backingplate density (g/cm³) & Backingplate thickness (µm) & Backingplate thickness fluct. (µm)
+78,195,1.0           ! Backing element Z & Backing element A & Backing element fraction
+0,0                  ! Parallel beam full particle tracking to file & Parallel beam file
+0                    ! Linear depositionmodel in the dead layer (electrons only)
+0                    ! Print angular distributions
+1                    ! Shielding model
+0                    ! Track alpha particles
+0                    ! Draw measurement setup to .ps file
+'BPX61.det'          ! Detector file
+'measSetupId_nuclideId.ccf' ! Coincidence filename
+n                    ! Print to screen
+y                    ! Print to file
+!  Hello and welcome to the first example.
+!
+!Follow the step by step instructions to simulate the energy
+!spectrum from the 'thule particle'
+!
+!1) Turn to the plot page and open the file AASI/examples/Example1_spectrum.graph using the open button
+!
+!2) Modify the color of the opened spectrum in graph properties. Select light gray.
+!   Check the fill box
+!
+!3) Turn to the 'Calculate' page and check the plot sum graph only box.
+!
+!4) Run the simulation by pressing 
+!   the 'Run simulation' button in the 'Run simulation' frame (or 
+!   select 'Run simulation' in the 'Run' menu). 
+!
+!5) Turn to the plot page. Select graph 'sum' in the currently selected graph list, 
+!   then under graph properties, press the Delete button to remove the graph
+!
+!6) Turn back to the calculation page. Uncheck the 'plot sum graph only' box, and run the simulation again.

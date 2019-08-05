@@ -1,0 +1,76 @@
+/* This text is in Lucida Console */
+* { 
+	font-family: monospace,Lucida Console,Lucida Sans Typewriter,monaco,Bitstream Vera Sans Mono; 
+}
+
+body {
+  margin: 0;
+  background-color: #1a1a1a;
+  color: #dddddd;
+}
+canvas {
+  display: block;
+}
+
+.header {
+    width: 90%;
+    height: 20px;
+    margin: 10px;
+    padding: 20px;
+    font-size: large;
+}
+.main {
+    width: 97%;
+    float: left;
+    padding: 5px;
+}
+.left {    
+    font-weight: bold;
+    float: left;
+}
+#statistic {
+  font-style: bold;
+  font-size: larger;
+}
+.right {
+  font-size: small;
+  vertical-align: middle;
+  margin: 5px;
+  padding-top:10px;
+  text-align: center;
+  float: right;
+}
+.button {
+  font-size: large;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  text-transform: lowercase;
+  text-decoration: none;
+  background: lightgrey;
+  border-radius: 10px;
+  border: none;
+  margin: 10px;
+  padding: 10px;
+  /*height: 50px;
+  padding: 15px;
+  margin: 10px;
+  float: center;*/
+}
+.triggerButton {
+  font-size: large;
+  text-align: center;
+  vertical-align: middle;
+  color: black;
+  text-transform: lowercase;
+  text-decoration: none;
+  background: lightgrey;
+  border-radius: 10px;
+  display: inline-block;
+  border: none;
+  width: 40px;
+  height: 40px;
+  margin: 10px;
+  margin-right: 30px;
+  float: center;
+}

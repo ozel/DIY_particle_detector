@@ -1,0 +1,267 @@
+Cmp-Mod V01 Created by PcbNew   date = 2018 July 10, Tuesday 15:08:08
+
+BeginCmp
+TimeStamp = 5AFEEBB3
+Path = /4FA694AE
+Reference = R3;
+ValeurCmp = 10M;
+IdModule  = Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B11AF3F
+Path = 
+Reference = REF***;
+ValeurCmp = OSHW-Logo2_7.3x6mm_SilkScreen;
+IdModule  = Symbols:OSHW-Logo2_9.8x8mm_SilkScreen;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFD7F22
+Path = /4FA69492
+Reference = U1;
+ValeurCmp = TL072;
+IdModule  = Housings_DIP:DIP-8_W7.62mm_LongPads;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFDCDD4
+Path = /4FA698C7
+Reference = C9;
+ValeurCmp = 47u;
+IdModule  = Capacitors_THT:CP_Radial_D6.3mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B119FAF
+Path = 
+Reference = REF***;
+ValeurCmp = OSHW-Logo2_7.3x6mm_SilkScreen;
+IdModule  = Symbols:OSHW-Logo2_9.8x8mm_SilkScreen;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B119BCA
+Path = /5AFA5A4D
+Reference = C1;
+ValeurCmp = 10p;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9D1CB
+Path = /4FA6951A
+Reference = C2;
+ValeurCmp = 10p;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF66508
+Path = /4FA6962C
+Reference = C3;
+ValeurCmp = 100n;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFD8233
+Path = /4FA69707
+Reference = C5;
+ValeurCmp = 100n;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFEEC0A
+Path = /4FA695AB
+Reference = C6;
+ValeurCmp = 100n;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFEDD29
+Path = /5AFA6D34
+Reference = C7;
+ValeurCmp = 10p;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B11B2C4
+Path = /4FA697AC
+Reference = C8;
+ValeurCmp = 100n;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFDC02E
+Path = /5B0272F2
+Reference = C10;
+ValeurCmp = 100n;
+IdModule  = Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF65E73
+Path = /4FA694DC
+Reference = R2;
+ValeurCmp = 15k;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B1199DD
+Path = /4FA696EE
+Reference = R4;
+ValeurCmp = 1k;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B119882
+Path = /4FA696FC
+Reference = R5;
+ValeurCmp = 100k;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B11B817
+Path = /4FA694D1
+Reference = R1;
+ValeurCmp = 4k7;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFEDC91
+Path = /5AFD6430
+Reference = MK7;
+ValeurCmp = M3 support;
+IdModule  = Mounting_Holes:MountingHole_3.2mm_M3_ISO7380_Pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFDAC9A
+Path = /5AFD64D0
+Reference = MK6;
+ValeurCmp = M3 support;
+IdModule  = Mounting_Holes:MountingHole_3.2mm_M3_ISO7380_Pad;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9A2EB
+Path = /5AFA97B6
+Reference = D1;
+ValeurCmp = BPW34F;
+IdModule  = Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B118C65
+Path = /5AFA9764
+Reference = D2;
+ValeurCmp = BPW34F;
+IdModule  = Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B118BEA
+Path = /5AFA9712
+Reference = D3;
+ValeurCmp = BPW34F;
+IdModule  = Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF98DCB
+Path = /4FA6949D
+Reference = D4;
+ValeurCmp = BPW34F;
+IdModule  = Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9A8FE
+Path = /5AF8AE41
+Reference = J1;
+ValeurCmp = BNC socket (case mounted);
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B11A615
+Path = /4FA69792
+Reference = R6;
+ValeurCmp = 10k;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5B11A66A
+Path = /4FA697A6
+Reference = R7;
+ValeurCmp = 10k;
+IdModule  = Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF643E3
+Path = /5AF99C51
+Reference = BT1;
+ValeurCmp = 9V battery clip;
+IdModule  = Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFD8C60
+Path = /4FA69594
+Reference = C4;
+ValeurCmp = 10-100p;
+IdModule  = Capacitors_SMD:C_Trimmer_Murata_TZB4-B;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9D4D6
+Path = /5AFA0F85
+Reference = MK1;
+ValeurCmp = via for coincidence sandwich;
+IdModule  = Wire_Pads:SolderWirePad_single_0-8mmDrill;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9D48C
+Path = /5AFA107D
+Reference = MK2;
+ValeurCmp = via for coincidence sandwich;
+IdModule  = Wire_Pads:SolderWirePad_single_0-8mmDrill;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9D491
+Path = /5AFA11AD
+Reference = MK3;
+ValeurCmp = via for coincidence sandwich;
+IdModule  = Wire_Pads:SolderWirePad_single_0-8mmDrill;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AF9D496
+Path = /5AFA1235
+Reference = MK4;
+ValeurCmp = via for coincidence sandwich;
+IdModule  = Wire_Pads:SolderWirePad_single_0-8mmDrill;
+EndCmp
+
+BeginCmp
+TimeStamp = 5AFDA66A
+Path = /5AFD6430
+Reference = MK5;
+ValeurCmp = M3 support;
+IdModule  = Mounting_Holes:MountingHole_3.2mm_M3_ISO7380_Pad;
+EndCmp
+
+EndListe
