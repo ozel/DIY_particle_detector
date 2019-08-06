@@ -131,7 +131,7 @@ with open(file_name,'rb') as file:
 #df = pd.read_pickle("./data/mixed_alpha_4236RP_pulses_2019-04-08_17-54-37___27022___0-49.pkl")
 
 # Radium watch hand, an old watch hand painted with radium-based radioluminescent paint
-#df = pd.read_pickle("./data/RaHandle_11mm_pulses_2019-06-27_11-46-55___30032___1-28.pkl")
+#df = pd.read_pickle("./data/Radium_watch_hand_11mm_pulses_2019-06-27_11-46-55___30032___1-28.pkl")
 
 # background radiation as measured in souterrain office at CERN, Meyrin, Switzerland
 #df = pd.read_pickle("./data/office_background_pulses_2019-07-17_22-14-10___48___14-44.pkl")
