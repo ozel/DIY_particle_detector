@@ -36,13 +36,12 @@ The electronic design files are relased under the CERN OHL licence version 1.2.
 Since both kinds of diode have the same sensitive area (~7 mm^2) usage of circuit V1.1 is advised if detection of alpha particles is not desired but instead a higher countrate. 
 Four diodes provide four times more sensitive volume and area which make the device more sensitive to sources of low intesity (low rate of radioactive decays).
 
+Renderings of V1.2 showing the top side with one BPX61 diode on the left and the backside with a dual-stage operational amplifier circuit optimised to produce 1-2 ms long voltage pulses:
 
 <img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_top.png" height="170"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_bottom.png" height="170">
 
 Mircoscope image of Osram BPX61 diode below, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
 Care must be taken in order to keep the bond wire in place when the glass window gets removed.
-
-Renderings of V1.2 showing the top side with one BPX61 diode on the left and the backside with a dual-stage operational amplifier circuit optimised to produce 1-2 ms long voltage pulses.
 
 <img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
 
