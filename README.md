@@ -37,7 +37,8 @@ Since both kinds of diode have the same sensitive area (~7 mm^2) usage of circui
 Four diodes provide four times more sensitive volume and area which make the device more sensitive to sources of low intesity (low rate of radioactive decays).
 
 
-<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_top.png" height="180"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_bottom.png" height="180">
+<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_top.png" height="170"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_bottom.png" height="170">
+
 Mircoscope image of Osram BPX61 diode below, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
 Care must be taken in order to keep the bond wire in place when the glass window gets removed.
 
@@ -51,8 +52,8 @@ Renderings of V1.2 showing the top side with one BPX61 diode on the left and the
   See pictures above and the schematics for corresponding part numbers of specific aluminium cases that fit.
 * 9 V battery. NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise)
 * Signal output is in the range of +/- 1 V and compatible with an audio/microphone input such as a headset connector of a mobile phone or laptop (or an oscilloscope if available)
-* For higher precision and better reproducability of measurements, a small USB soundcard (< 10 EUR) is recommended: 
-  <img src="https://github.com/ozel/DIY_particle_detector/blob/master/images/low-cost_usb_audio_interfaces.jpg" width="300">
+* <img src="https://github.com/ozel/DIY_particle_detector/blob/master/images/low-cost_usb_audio_interfaces.jpg" width="300">
+  For higher precision and better reproducability of measurements, a small USB soundcard (< 10 EUR) is recommended:
   The ICY-BOX IB-AC527 on the left and the K&ouml;nig Electronic CMP-SOUNDUSB12 on the right ("3D Sound Controller 5.1") use both a chip series from C-Media Electronics Inc: [CM108](https://www.cmedia.com.tw/products/USB20_FULL_SPEED/CM108AH).
   It's well specified with a flat frequency response in the required 1-5 kHz range and good signal to noise ratio. As standard USB Audio Class devices, no dirvers are required and they are recognised as regular audio input device in many operating systems, including Android & iOS.
 * Several reference measurements are provided in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). 
