@@ -16,7 +16,7 @@ Black lines in the upper area represent electronic noise, detected signal pulses
 
 ## Hardware
 
-<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="400"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="400">
+<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="350"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="350">
 
 
 The electronic design files are relased under the CERN OHL licence version 1.2.
