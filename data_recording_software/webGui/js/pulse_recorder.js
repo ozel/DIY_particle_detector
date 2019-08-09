@@ -144,8 +144,8 @@ class Oscilloscope {
     this.drawRequest = 0;
     this.width = 0
     this.height = 0
-    this.threshold = -9000;
-    this.alpha_threshold = -124300; //disabled
+    this.threshold = -11000;
+    this.alpha_threshold = -1243000; //disabled
     this.data = [];
     this.downloadBlob = null;
     this.lastTime = null;
