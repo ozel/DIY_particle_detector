@@ -144,7 +144,7 @@ class Oscilloscope {
     this.drawRequest = 0;
     this.width = 0
     this.height = 0
-    this.threshold = -11000;
+    this.threshold = -13000;
     this.alpha_threshold = -1243000; //disabled
     this.data = [];
     this.downloadBlob = null;
@@ -490,11 +490,11 @@ document.getElementById("saveData").addEventListener("click", function(e) {
   });
 
   document.getElementById("thlUp").addEventListener("click", function(e) {
-    scope.setThreshold(100);
+    scope.setThreshold(1000);
   });
 
   document.getElementById("thlDown").addEventListener("click", function(e) {
-    scope.setThreshold(-100);
+    scope.setThreshold(-1000);
   });
 
   function checkKey(e) {
