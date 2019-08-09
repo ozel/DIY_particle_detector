@@ -144,8 +144,8 @@ class Oscilloscope {
     this.drawRequest = 0;
     this.width = 0
     this.height = 0
-    this.threshold = -300;
-    this.alpha_threshold = -1243;
+    this.threshold = -1000;
+    this.alpha_threshold = -12430; //disabled
     this.data = [];
     this.downloadBlob = null;
     this.lastTime = null;
@@ -269,7 +269,7 @@ class Oscilloscope {
     
     const x_scale = 1;
     const step = width / this.samples.length * x_scale;
-    const y_scale = 3;
+    const y_scale = 1;
 
     var min = this.samples.reduce((a, b) => Math.min(a, b));
     // samples range is -1 to +1, FIXME: web-audio API should provide internal/native sample resolution
