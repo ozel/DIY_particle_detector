@@ -406,6 +406,16 @@ var scope = null
 function streamCallback(stream) {
   var source = audioCtx.createMediaStreamSource(stream);
 
+  navigator.mediaDevices.enumerateDevices().then(audioInputDevices => {
+      var string = ""
+      audioInputDevices.forEach(device => {
+          console.log(device)
+          string += JSON.stringify(device, null, 4);
+          string += "<br>"
+      });
+      document.getElementById("debug").innerHTML = string
+  })
+
   // attach oscilloscope
   scope = new Oscilloscope(source);
 
@@ -421,6 +431,7 @@ function streamCallback(stream) {
 
   document.getElementById("rate").innerHTML = "sample rate:<br> " + rate/1000 + " kHz";
 }
+
 
 navigator.mediaDevices
   .getUserMedia(constraints)
