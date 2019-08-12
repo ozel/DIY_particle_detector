@@ -116,11 +116,11 @@ For further details please consult the scripts provided in [data_analysis_and_re
 
 C-V curves of several diodes of the BPW34 series and BXP61 type have been taken to characterise the thickness of the sensitive layer under reverse bias conditions.
 With about 8 V on the cathode (as it is the case in the circuits V1.1 and V1.2), the typical sensitive layer thickness is about 50 um which corresponds well with the recorded energy spectra. 
-Based on the CV curves, the following doping profiles are derived:
+Based on the C-V curves, the following doping profiles are derived:
 
 <img src="images/Neff_10diodes_HR.png" width="550">
 
-The effective charge carrier concentration 'Neff' is on average about half of the value reported in 2008 by [Ravotti et al.](http://cds.cern.ch/record/1169276/files/04636908.pdf) which can be explained by manufacturing process variations. The similarity of the curve shapes confirms that the investigated diodes use either the same or at least very similar silicon chips. The regular micropattern visible in the doping profile curves is a measurement artefact which is caused by internal rounding errors of the C-V measurement device. The thin double lines indicate the error range of the instrument as reported by the manufacturer (Keysight B1500A with the MFCMU module). 
+The effective charge carrier concentration 'Neff' is on average about half of the value reported in 2008 by [Ravotti et al.](http://cds.cern.ch/record/1169276/files/04636908.pdf) which can be explained by manufacturing process variations. The similarity of the curve shapes confirms that the investigated diodes use either the same or at least very similar silicon chips. The regular micropattern visible in the doping profile curves is a measurement artefact which is caused by internal rounding errors of the C-V measurement device. The thin double lines indicate the error range of the instrument as stated by its manufacturer (Keysight B1500A with the MFCMU module). 
 
 Further discussion of the CV measurements can be found in the paper.
 The folder [data_analysis_and_reference_measurements/diode_detector/diode_characterisation_and_simulation_plots](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/diode_characterisation_and_simulation_plots) provides the scripts to reproduce the corresponding plots.
