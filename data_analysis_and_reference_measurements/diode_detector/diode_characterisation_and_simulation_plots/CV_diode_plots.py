@@ -18,6 +18,8 @@ from matplotlib.collections import PathCollection
 from matplotlib.legend_handler import HandlerPathCollection
 import decimal as D
 
+mpl.rcParams['font.size']=13 #default font size
+
 # enable for cleaning the regular mico pattern in the Neff plots, suggests data 
 # is affeted by rounding errors introduced by the instrument
 FILTER_ROUNDING_ARTEFACTS = False 
@@ -134,8 +136,8 @@ def plotCV(df,columns,colors):
         plot.errorbar(df.VBias,df[column],yerr=df[column]*df[column+'_err'].values,fmt='s',markeredgewidth=1,markersize=3,label=column,markerfacecolor='none',color='none', markeredgecolor=colors[i])
         i +=1
     txt = r"\n(errors are smaller than marker symbols)"
-    plot.set_ylabel('C [F]')
-    plot.set_xlabel('Reverse bias voltage [|V|]') #+ txt )
+    plot.set_ylabel('Capacitance [pF]', fontsize=14)
+    plot.set_xlabel('Reverse bias voltage [|V|]', fontsize=14)#+ txt )
     plot.set_yscale('log')
     plot.set_xscale('log')
     def update2(handle, orig):
@@ -145,6 +147,7 @@ def plotCV(df,columns,colors):
     plot.grid(which='minor',linewidth=0.5)
     plot.grid(which='major',linewidth=1.0)
     plot.set_xticklabels(list(map(str, [0.001,0.01,0.1,1,10]))) # WARNING: adapt in case of other changes
+    plot.set_yticklabels(list(map(str, [0.1,1,10,100,1000]))) # WARNING: adapt in case of other changes
     fig.tight_layout(pad=0.2)
 
 
@@ -155,8 +158,8 @@ def plotDepth(df,columns,colors):
     for column in df[columns]:
         plot.plot(df.VBias,depth(df[column])*10000,label=column, color=colors[i])
         i +=1
-    plot.set_ylabel('Depletion layer depth [' + u'\u03bc' + "m]")
-    plot.set_xlabel('Reverse bias voltage [|V|]')
+    plot.set_ylabel('Depletion layer depth [' + u'\u03bc' + "m]", fontsize=14)
+    plot.set_xlabel('Reverse bias voltage [|V|]', fontsize=14)
     plot.get_xaxis().set_minor_locator(mpl.ticker.AutoMinorLocator())
     plot.get_yaxis().set_minor_locator(mpl.ticker.AutoMinorLocator())
     plot.legend()

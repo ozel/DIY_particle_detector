@@ -11,7 +11,11 @@ histograms. Measurements are loaded from pandas dataframes stored in python's
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 import math
+
+mpl.rcParams['font.size']=18 #default font size
+
 
 def calib_tot(tot, correct=False):
     # Maps pixel tot values to energy in keV, 
@@ -111,10 +115,10 @@ r['alpha'] = dg.alpha
 #r['other'] = dg.muon + dg.unknown + dg['x-ray']
 
 overlapped_bar(r,xlabel = 'Time [min]', ylabel='Counts')
-leg = plt.legend([r'all clusters except $\alpha$' "\n" r'($\beta$,$\gamma$,$\mu$,$X$-$ray,unknown$)', r'$\alpha$-particle clusters'], fontsize = 'x-large', bbox_to_anchor=(1.01,1), borderaxespad=0)
+leg = plt.legend([r'all clusters except $\alpha$' "\n" r'($\beta$,$\gamma$,$\mu$,$X$-$ray,unknown$)', r'$\alpha$-particle clusters'], fontsize = 'large', bbox_to_anchor=(1.01,1), borderaxespad=0)
 leg.set_title(title="Pixel cluster categories:",prop={'size':'x-large'})
 
-fig.tight_layout(pad=0)
+fig.tight_layout(pad=0.2)
 
 # <codecell>    
 
@@ -132,8 +136,8 @@ r['alpha'] = dg.alpha
 #r['other'] = dg.muon + dg.unknown + dg['x-ray']
 
 overlapped_bar(r,xlabel = 'Time [min]', ylabel='Counts')
-leg=plt.legend([r'$\beta$- & $\gamma$-particles',r'$\alpha$-particles'],fontsize = 'xx-large')
-leg.set_title(title="Pixel cluster categories:",prop={'size':'xx-large'})
+leg=plt.legend([r'$\beta$- & $\gamma$-particles',r'$\alpha$-particles'],fontsize = 'x-large')
+leg.set_title(title="Pixel cluster categories:",prop={'size':'x-large'})
 fig.tight_layout(pad=0)
 
 # <codecell>

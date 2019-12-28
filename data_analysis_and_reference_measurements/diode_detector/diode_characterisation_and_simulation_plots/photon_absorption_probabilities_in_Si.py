@@ -44,14 +44,14 @@ ax.loglog(x,1-np.exp(-1*mu_en*Si_density*0.05), label=r'50 $\mu m$ (energy  att.
 
 ax.xaxis.set_ticks_position('both')
 ax.yaxis.set_ticks_position('both')
-
+ax.tick_params( axis='both', labelsize=12)
 
 for axis in [ax.xaxis, ax.yaxis]:
     formatter = FuncFormatter(lambda y, _: '{:.16g}'.format(y))
     axis.set_major_formatter(formatter)
 
-plt.xlabel('Photon energy [MeV]')
-plt.ylabel('Detection probability in silicon')
-plt.legend()
+plt.xlabel('Photon energy [MeV]', fontsize=13)
+plt.ylabel('Detection probability in silicon', fontsize=13)
+plt.legend(fontsize=12)
 fig.tight_layout(pad=0.3)
 plt.show()

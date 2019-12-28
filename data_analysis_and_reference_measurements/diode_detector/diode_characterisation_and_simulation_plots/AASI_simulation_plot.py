@@ -11,8 +11,12 @@ Corresponding simulation parameters that were used are stored in ./sim/AASI-sett
 """
 import pandas as pd
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 import decimal as D
+
+mpl.rcParams['font.size']=13 #default font size
+
 
 # estimated centroid positions as found in AASI simulation (zero/threshold value from x-ray calibration)
 ref = np.asarray([33,1300, 3893, 4290, 4636]) # 11mm of air (1.123 kg/m^3 density) between detector and source
@@ -76,18 +80,18 @@ h2.axvline(ref[4]/1000,linewidth=1, linestyle=":", color="grey", ymin=-0.07,clip
 h2.set_xticks(ticks_minor, minor=True)
 
 x_bounds = h2.get_xlim()
-h2.annotate(s='${}^{148}$Gd', xy =(((ref[1]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0])),-0.12), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
-h2.annotate(s='${}^{239}$Pu', xy =(((ref[2]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0])-0.005),-0.12), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
-h2.annotate(s='${}^{241}$Am', xy =(((ref[3]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.005,-0.08), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
-h2.annotate(s='${}^{244}$Cm', xy =(((ref[4]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.005,-0.12), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
+h2.annotate(s='${}^{148}$Gd', xy =(((ref[1]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0])),-0.12), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center', fontsize = 12)
+h2.annotate(s='${}^{239}$Pu', xy =(((ref[2]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0])-0.005),-0.12), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center', fontsize = 12)
+h2.annotate(s='${}^{241}$Am', xy =(((ref[3]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.007,-0.06), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center', fontsize = 12)
+h2.annotate(s='${}^{244}$Cm', xy =(((ref[4]/1000-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.005,-0.12), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center', fontsize = 12)
 h2.legend()
 
 # get bin width from simulation dataset
 bin_width_kev = (mev_edges[1]-mev_edges[0])*1000
 
-h2.set_xlabel('Energy [MeV]', fontsize = 10)
-h2.set_ylabel('Counts/' + str(int(bin_width_kev)) + ' keV' , fontsize = 10)
-h2.yaxis.set_label_coords(-0.09, 0.85)
+h2.set_xlabel('Energy [MeV]', fontsize = 14)
+h2.set_ylabel('Counts/' + str(int(bin_width_kev)) + ' keV' , fontsize = 14)
+h2.yaxis.set_label_coords(-0.12, 0.80)
 
 plt.tight_layout(pad=0.5)
 

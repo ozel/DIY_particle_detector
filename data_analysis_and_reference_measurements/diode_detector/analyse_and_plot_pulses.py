@@ -53,11 +53,15 @@ Expected format for datasets:
 
 import pandas as pd
 import numpy as np
+import matplotlib as mpl
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 import matplotlib.gridspec as gridspec  # for unequal plot boxes
 import decimal as D
 import msgpack
+
+mpl.rcParams['font.size']=12 #default font size
+
 
 # GENERAL SETTINGS
 
@@ -174,10 +178,12 @@ if SHOW_DETECTED_PULSES:
     wf.set_xticks(np.arange(0,120,0.1e-3*48e3), minor=True)
     wf.set_xticklabels(list(map(str, np.arange(0,2.5,0.5))), minor=False)
     #wf.set_xticklabels(list(map(str, np.arange(0.1,0.9,0.1))), minor=True)
-    wf.set_xlabel("Time [ms]")
+    wf.set_xlabel("Time [ms]", fontsize=14)
     wf.xaxis.set_label_coords(0.96, -0.025) #right
-    wf.set_ylabel('Audio signal amplitude [arb. unit]') #, fontsize = 10)
-    fig.tight_layout(rect=(0.05,-0.010,1.01,1.02))
+    wf.set_ylabel('Audio signal amplitude [arb. unit]', fontsize = 14)
+    #wf.set_ylim(-1300,400) # beta pulse range
+    wf.set_ylim(-17000,5000) # complete alpha pulse range
+    fig.tight_layout() #rect=(0.05,-0.010,1.01,1.02))
 
 if DEBUG:
     fig2 = plt.figure()
@@ -354,7 +360,7 @@ print('chi sq.:', chisq, " red. chi sq.:",reducedchisq )
 bin_width = 67/2 # 67 is used in energy calibration with alphas
 
 # limit maximum of displayed energy range
-max_x_limit = 1445 # ~ 0.6 Mev
+max_x_limit = 1330 #1445 # ~ 0.6 Mev
 
 #################
 
@@ -375,14 +381,14 @@ min_bin = min_bin.astype(dtype='int')
 max_bin = max(peaks)
 bins= np.arange(min_bin, max_bin + bin_width, bin_width)
 
-h2.set_xlabel('[MeV]', fontsize = 10)
+h2.set_xlabel('[MeV]', fontsize = 12)
 #h2.xaxis.set_label_coords(0.07, -0.093) #left
-#h2.xaxis.set_label_coords(1, -0.093) #right
-h2.xaxis.set_label_coords(1.077, -0.088) # right
-h2.text(0.035, 0.075, 'Energy',transform=plt.gcf().transFigure)
+#h2.xaxis.set_label_coords(1, -0.098) #right
+h2.xaxis.set_label_coords(1.057, -0.09) # right aligned at end
+h2.text(-0.001, 0.05, 'Energy',transform=plt.gcf().transFigure, fontsize = 14)
 
-h2.set_ylabel('Counts', fontsize = 10)
-h2.yaxis.set_label_coords(-0.10, 0.93)
+h2.set_ylabel('Counts', fontsize = 14)
+h2.yaxis.set_label_coords(-0.10, 0.91)
 
 # plot either histogram or just data points with error bars
 (entries,edges,patches) = h2.hist(peaks, color="blue", histtype="step", bins=bins, log=0, linewidth="0.8", label="electron measurement")
@@ -402,10 +408,10 @@ ax2.set_xlim(h2.get_xlim())
 ax2.xaxis.set_ticks_position('bottom')
 ax2.xaxis.set_label_position('bottom')
 ax2.spines['bottom'].set_position(('outward', 20))
-ax2.set_xlabel('[arb.unit]', fontsize = 10)
+ax2.set_xlabel('[arb.unit]', fontsize = 12)
 #ax2.xaxis.set_label_coords(0.06, -0.021) #left
-#ax2.xaxis.set_label_coords(1.0, -0.021) #right
-ax2.xaxis.set_label_coords(1.1, -0.023) #right
+#ax2.xaxis.set_label_coords(1.015, -0.025) #right
+ax2.xaxis.set_label_coords(1.085, -0.02) #right at end of plot
 
 # show measurement with poisson errors, alternatively uncomment h2.hist() line above
 #bin_centers = 0.5 * (edges[:-1] + edges[1:])
@@ -421,7 +427,7 @@ ax2.xaxis.set_label_coords(1.1, -0.023) #right
 
 
 h2.legend()
-plt.tight_layout(h_pad=0.0)
+plt.tight_layout(pad=0.0)
 
 # number of bins should be similar to simulation (minus the 33 kev threshold)  if a comparision is done
 print("number of bins:", edges[:-1].size, ", raw bin size:", edges[1]-edges[0], ", first:",edges[0],", last:", edges[-1] )
@@ -457,20 +463,21 @@ ticks_kev_minor = np.arange(500,8500,1000) #minor 0.5 Mev
 ticks_raw = ((ticks_kev - popt_peak[1]) / popt_peak[0]) 
 ticks_raw_minor = (ticks_kev_minor - popt_peak[1]) / popt_peak[0] 
 
-fig2 = plt.figure()
+fig2 = plt.figure(figsize=(7, 5))
 h2 = fig2.add_subplot(111)
 
 max_bin = np.round((max_bin_kev - popt_peak[1]) / popt_peak[0],0)
 
 bins= np.arange(0, max_bin + bin_width, bin_width)
 
-h2.set_xlabel('[MeV]', fontsize = 10)
+h2.set_xlabel('[MeV]', fontsize = 12)
 #h2.xaxis.set_label_coords(0.06, -0.093) # left
-h2.xaxis.set_label_coords(1.077, -0.088) # right
-h2.text(0.03, 0.062, 'Energy',transform=plt.gcf().transFigure)
+#h2.xaxis.set_label_coords(1.067, -0.088) # right
+h2.xaxis.set_label_coords(1.081, -0.084) # right
+h2.text(0.02, 0.06, 'Energy',transform=plt.gcf().transFigure,fontsize = 12)
 
-h2.set_ylabel('Counts', fontsize = 10)
-h2.yaxis.set_label_coords(-0.10, 0.93)
+h2.set_ylabel('Counts', fontsize = 12)
+h2.yaxis.set_label_coords(-0.1, 0.91)
 
 (entries,edges,patches) = h2.hist(peaks, color="blue", histtype="step", bins=bins, log=0, linewidth="0.8", label="alpha measurement")
 
@@ -489,15 +496,15 @@ x_bounds = h2.get_xlim()
 #h2.axvline(data_peak[3],linewidth=1, linestyle=":", color="grey")
 #h2.axvline(data_peak[4],linewidth=1, linestyle=":", color="grey")
 #h2.annotate(s='${}^{148}$Gd', xy =(((data_peak[1]-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.35), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
-#h2.annotate(s='${}^{239}$Pu', xy =(((data_peak[2]-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.95), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
+#h2.annotate(s='${}^{239}$Pu', xy =(((data_peak[2]-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.943), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
 #h2.annotate(s='${}^{241}$Am', xy =(((data_peak[3]-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.005,0.76), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
-#h2.annotate(s='${}^{244}$Cm', xy =(((data_peak[4]-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.007,0.44), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
+#h2.annotate(s='${}^{244}$Cm', xy =(((data_peak[4]-x_bounds[0])/(x_bounds[1]-x_bounds[0]))+0.007,0.46), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
 
 
 if show_isotope_labels:
     #  peak labels for radium & its progeny in watch hand measurement
     h2.annotate(s='${}^{226}$Ra', xy =(((6800-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.55), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
-    h2.annotate(s='${}^{210}$Po,\n${}^{222}$Rn', xy =(((8600-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.45), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
+    h2.annotate(s='${}^{222}$Rn,\n${}^{210}$Po', xy =(((8600-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.45), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
     h2.annotate(s='${}^{218}$Po', xy =(((9900-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.32), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
     h2.annotate(s='${}^{214}$Po', xy =(((13300-x_bounds[0])/(x_bounds[1]-x_bounds[0])),0.3), xycoords='axes fraction', verticalalignment='right', horizontalalignment='center')
 
@@ -511,9 +518,10 @@ ax2.set_xlim(h2.get_xlim())
 ax2.xaxis.set_ticks_position('bottom')
 ax2.xaxis.set_label_position('bottom')
 ax2.spines['bottom'].set_position(('outward', 20))
-ax2.set_xlabel('[arb.unit]', fontsize = 10)
-#ax2.xaxis.set_label_coords(0.065, -0.021) #left
-ax2.xaxis.set_label_coords(1.1, -0.023) #right
+ax2.set_xlabel('[arb. unit]', fontsize = 12)
+#ax2.xaxis.set_label_coords(-0.01, -0.025) #left
+#ax2.xaxis.set_label_coords(1.095, -0.023) #right
+ax2.xaxis.set_label_coords(1.115, -0.02) #right
 
 plt.tight_layout(pad=0.5)
 
@@ -612,8 +620,8 @@ resid = ref - data_fit_peak
 #offset = poly1(0.0,*popt_area)
 #sd = [734,sd_a,sd_a,sd_a,sd_a] #3741
 #sd = 6000
-l.set_xlabel('Energy\n[keV]', fontsize = 10)
-l.xaxis.set_label_coords(-0.075, 1.0)
+l.set_xlabel('Energy\n[keV]', fontsize = 14)
+l.xaxis.set_label_coords(-0.075, 1.03)
 
 #l.text(0.05, 0.85, '$\chi^2$ = {0:0.2f}, $\chi_r^2$ = {1:0.2f}'.format(chisq,reducedchisq),transform = l.transAxes)
 l.text(0.05, 0.85, '$\sigma$ = {0:0.1f} keV, FWHM = {1:0.0f} keV'.format(src_e_kev,src_e_kev*2.355), transform = l.transAxes)
@@ -628,7 +636,7 @@ l.text(0.05, 0.55, '$R^2$ = {0:0.3f}'.format(r_squared_a), transform = l.transAx
 
 err = fig3.add_subplot(gs[1])
 err.errorbar(data_peak, resid, yerr=e_kev, fmt='o',color='red', ms=2,linewidth=0.8, ecolor='black')
-err.set_xlabel('pulse amplitudes [arb. unit]')
+err.set_xlabel('Pulse amplitude [arb. unit]',fontsize = 14)
 err.set_ylim(100,-100)
 plt.tight_layout(pad=0.3)
 
