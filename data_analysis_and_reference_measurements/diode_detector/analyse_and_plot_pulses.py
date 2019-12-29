@@ -84,25 +84,27 @@ def poly1(x, a, b): #1st grade polynom
 #
     
 # read .msgp files from HTML/js pulse recorder
-file_name = "/Users/ozel/Downloads/test-3.msgp"
+#file_name = "./data/flight_from-middle-to-landing_GVA-LIS_EJU1445_09-08-2019_11-30.msgp"
+file_name = ""
 
-with open(file_name,'rb') as file:
-   msgp = msgpack.unpackb(file.read(),encoding='utf-8')
-   df = pd.DataFrame(msgp)
-   if not isinstance(df['pulse'][0], (np.ndarray, np.generic)):
-       df_new = pd.DataFrame(columns=['pulse'])
-       # create numpy arrays
-       for i,row in df.iterrows():
-           df_new['pulse'].loc[i] = np.asarray(row['pulse'], dtype='int16')
-       df['pulse'] = df_new['pulse'] 
-   # javascript's Date() saves timestamp formated in UTC and milliseconds
-   df['ts'] = pd.to_datetime(df['ts']*1000000)
-   df['ts'] = df['ts'].dt.tz_localize(tz='UTC') 
-   # convert to desired time zone:
-   df['ts'] = df['ts'].dt.tz_convert('Europe/Berlin')
-   # make sure column order starts with timestamp
-   df = df[['ts','pulse']]
-   print(df)
+if file_name is not "":
+    with open(file_name,'rb') as file:
+       msgp = msgpack.unpackb(file.read(),encoding='utf-8')
+       df = pd.DataFrame(msgp)
+       if not isinstance(df['pulse'][0], (np.ndarray, np.generic)):
+           df_new = pd.DataFrame(columns=['pulse'])
+           # create numpy arrays
+           for i,row in df.iterrows():
+               df_new['pulse'].loc[i] = np.asarray(row['pulse'], dtype='int16')
+           df['pulse'] = df_new['pulse'] 
+       # javascript's Date() saves timestamp formated in UTC and milliseconds
+       df['ts'] = pd.to_datetime(df['ts']*1000000)
+       df['ts'] = df['ts'].dt.tz_localize(tz='UTC') 
+       # convert to desired time zone:
+       df['ts'] = df['ts'].dt.tz_convert('Europe/Berlin')
+       # make sure column order starts with timestamp
+       df = df[['ts','pulse']]
+       print(df)
    
 # read python pickle files (.pkl) files recorded with pulse_recorder.py
 # df = pd.read_pickle("../data_recording_software/data/pulses_2019-08-01_23-05-42___8___0-00.pkl")
@@ -112,7 +114,7 @@ with open(file_name,'rb') as file:
 ###########################################################
    
 # KCl block, 9.44g ~3x3 cm measured at tickest 1 cm spot in the middle
-#df = pd.read_pickle("./data/KCL_9-44g_1x3x3cm_touchingdiodecase_pulses_2019-07-08_23-07-18___947___11-47.pkl")
+df = pd.read_pickle("./data/KCL_9-44g_1x3x3cm_touchingdiodecase_pulses_2019-07-08_23-07-18___947___11-47.pkl")
 
 # Columbite stone
 # diode case touching large black spot on the stone
@@ -170,6 +172,10 @@ min_length = 44  # about 0.9 ms
 max_length = 120 # about 2.5 ms, tolerates some alpha-pileup
 min_skip = min_length # was 25
 
+# arrays storing identified pulse waveforms for later plotting
+xpulses = []
+ypulses = []
+
 if SHOW_DETECTED_PULSES:
     fig = plt.figure()
     wf = fig.add_subplot(111)
@@ -224,12 +230,17 @@ for i,y in enumerate(lp[:]):
                      if peak < 0:
                          if DEBUG: print(i,"- peak below THL",peak)
                      peaks.append(peak)
+                     ypulse = np.roll(y[peakx1-100:peakx2+100],50-y[peakx1:peakx2].argmin())[130:]
+                     if ypulse.size > min_length:
+                         #FIXME: why are some empty?
+                         xpulses.append(list(range(len(ypulse))))
+                         ypulses.append(ypulse)
                      if SHOW_DETECTED_PULSES: #and peak <= 10:
-                         #wf.plot(y, "black", alpha=0.1)
+                         x = range(len(y))
+                         # wf.plot(y, "black", alpha=0.1)
                          if OVERLAY_PULSES:
-                             wf.plot(np.roll(y[peakx1-100:peakx2+100],50-y[peakx1:peakx2].argmin())[130:], "green", alpha=0.01) 
-                             # uncomment 2 lines below to print index labels next to max pulse amplitude
-                             #x = range(len(y))
+                             wf.plot(ypulse, "green", alpha=(1/255)) #alpha=(1/255) for smallest setting, 0.1 otherwise
+                             # uncomment below to print index labels next to max pulse amplitude
                              #wf.text(x[y[peakx1:peakx2].argmin()],y[peakx1:peakx2].min(), i) #lable pulse with id
                          else:
                              if peak > min_alpha_peak:
@@ -341,7 +352,7 @@ print('chi sq.:', chisq, " red. chi sq.:",reducedchisq )
 
 # <codecell>
 
-# HISTOGRAM PLOT SECTION START HERE
+# HISTOGRAM PLOT SECTION STARTS HERE
 
 # <codecell>
 #
@@ -640,6 +651,117 @@ err.set_xlabel('Pulse amplitude [arb. unit]',fontsize = 14)
 err.set_ylim(100,-100)
 plt.tight_layout(pad=0.3)
 
+# <codecell>
+
+# persistance plot, overlaying many waveforms in hex bins
+
+fig = plt.figure() #figsize=(7, 5.5))
+wf = fig.add_subplot(111)
+wf.set_xlim(0,120)
+wf.set_xticks(np.arange(0,120,0.5e-3*48e3), minor=False)
+wf.set_xticks(np.arange(0,120,0.1e-3*48e3), minor=True)
+wf.set_xticklabels(list(map(str, np.arange(0,2.5,0.5))), minor=False)
+#wf.set_xticklabels(list(map(str, np.arange(0.1,0.9,0.1))), minor=True)
+wf.set_xlabel("Time [ms]", fontsize=14)
+wf.xaxis.set_label_coords(0.96, -0.025) #right
+wf.set_ylabel('Audio signal amplitude [arb. unit]', fontsize = 14)
+#wf.set_ylim(-1300,400) # beta pulse range
+wf.set_ylim(-17000,5000) # complete alpha pulse range
+fig.tight_layout() #rect=(0.05,-0.010,1.01,1.02))
+hb = wf.hexbin(np.ravel(xpulses), np.asarray(ypulses).ravel(), gridsize=188, cmap='Greens', mincnt=1, vmax=100)
+#cb = fig.colorbar(hb, ax=wf)
+
+# <codecell>
+
+# persistance plot, overlaying many waveforms in regular square bins (pixels)
+
+fig = plt.figure(figsize=(6.5, 5.5))
+wf = fig.add_subplot(111)
+wf.set_xlim(0,120)
+wf.set_xticks(np.arange(0,120,0.5e-3*48e3), minor=False)
+wf.set_xticks(np.arange(0,120,0.1e-3*48e3), minor=True)
+wf.set_xticklabels(list(map(str, np.arange(0,2.5,0.5))), minor=False)
+#wf.set_xticklabels(list(map(str, np.arange(0.1,0.9,0.1))), minor=True)
+wf.set_xlabel("Time [ms]", fontsize=16)
+wf.xaxis.set_label_coords(0.95, -0.015) #right
+wf.set_ylabel('Audio signal amplitude [arb. unit]', fontsize = 16)
+
+#wf.set_ylim(-17000,6000) # complete alpha pulse range
+#wf.set_yticklabels(list(map(str, np.arange(-17000,6000,1000))), minor=False)
+#wf.set_ylim(-1300,400) # beta pulse range
+
+#hb = wf.hexbin(xpulses, ypulses, gridsize=354, cmap='Greens', mincnt=1, vmax=100)
+#cb = fig.colorbar(hb, ax=wf)
+
+length = max(map(len, xpulses))
+xpulses_n=np.array([np.append(xi,[0]*(length-len(xi))) for xi in xpulses], dtype=np.int)
+length = max(map(len, ypulses))
+ypulses_n=np.array([np.append(yi,[0]*(length-len(yi))) for yi in ypulses], dtype=np.int)
+
+
+#wf.plot(ypulses_n[23])
+
+## <codecell>
+
+#xpulses_n=np.asarray([x for x in xpulses if len(x) > 0 ])
+#ypulses_n=np.asarray([x for x in ypulses if len(x) > 0] )
+#xpulses_n=np.array(xpulses)
+#ypulses_n=np.array(ypulses)
+
+
+
+divx=1
+divy=180
+
+xmin,xmax = min([i.min() for i in xpulses_n]), max([i.max() for i in xpulses_n])
+ymin,ymax = min([i.min() for i in ypulses_n]), max([i.max() for i in ypulses_n])
+
+xsize = (np.round((xmax-xmin)/divx)).astype(int)
+ysize = (np.round((ymax-ymin)/divy)).astype(int)
+
+wf.set_ylim(0,(4000-ymin)/divy)
+wf.set_yticks(np.arange((-ymin-15000)/divy,ysize,2500/divy), minor=False)
+wf.set_yticklabels(list(map(str, np.arange(-15000,4001,2500))), minor=False)
+fig.tight_layout(pad=0.1,h_pad=0) #rect=(0.05,-0.010,1.01,1.02))
+
+
+#xsize,ysize  = (xmax-xmin),(ymax-ymin)
+
+
+im = np.zeros((xsize+1,ysize+1))
+def addIm(im,x,y):
+    for i,j in zip(x,y):
+        #try:
+            im[i,j] = im[i,j]+1
+        #except IndexError:
+        #    print(i,j)
+    return im
+
+for i,val in enumerate(xpulses_n[:]):
+    #xo = (np.round((xpulses_n[i]-xmin)/xsize)).astype(int)
+    yo = (np.round((ypulses_n[i]-ymin)/divy)).astype(int)
+    xo = (xpulses_n[i]-xmin)
+    #yo = (ypulses_n[i]-ymin)/ysize
+    #im[xo,yo] = im[xo,yo]+1
+    im = addIm(im,xo,yo)
+    #im = addIm(im,xpulses_n[i],ypulses_n[i]-ymin)
+im = np.ma.masked_array(im,mask=(im==0))
+
+wf.imshow( im.T,interpolation='nearest',origin="lower",cmap="Greens", vmax=250)#  extent=([x_edges[0], x_edges[-1], y_edges[0], y_edges[-1]]))
+
+#x_edges = np.arange(xsize)
+#y_edges = np.arange(ysize)
+
+#bin_values,_,__ = np.histogram2d(np.ravel(xpulses_n),np.ravel(ypulses_n),bins=(x_edges, y_edges) )
+#X, Y = np.meshgrid(x_edges,y_edges)
+
+#wf.pcolormesh(X,Y, bin_values.T, cmap="Greens", vmax=100)
+#hb = wf.hexbin(np.ravel(xpulses_n), np.asarray(ypulses_n).ravel(), gridsize=(188,188*2), cmap='Greens', mincnt=1, vmax=20)
+
+
+#wf.hist2d(im[:,0],im[:,1],bins=(x_edges, y_edges),vmax=3)
+#wf.scatter(ypulse_sum,range(len(ypulse_sum)))
+          
 # <codecell>
 
 # ALTERNATIVE code which evaluates the pulse integrals instead of amplitudes
