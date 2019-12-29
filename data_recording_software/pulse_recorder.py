@@ -50,6 +50,8 @@ import pyaudio
 import pandas as pd
 import datetime
 import random
+from functools import partial
+from scipy.signal import argrelextrema
 if ENABLE_SONIFICATION: import pyo
 
 
@@ -103,7 +105,9 @@ class Scope(QtGui.QMainWindow):
         self.ptypes = pd.Series(["alpha", "beta", "betagamma", "x-ray", "muon" ,"unknown"], dtype="category")
 
         self.thl =  THL
-        self.traces=[]
+        self.hl = -1243 # green cursor, highlight line for measuring only
+        self.peaks=[]
+        self.paused = False
         
         if ENABLE_SONIFICATION:
             # setup some wild Karplus-Strong oscillator
@@ -130,13 +134,17 @@ class Scope(QtGui.QMainWindow):
                     pulse = pulse.assign(ptype=[self.ptypes[1]]) #beta/electron
                     print("   elect   ", end="")
                 if self.sound:
-                    self.lf.setMul(abs(int(samples.sum()))/200000)
-                    self.env.dur = abs(int(samples.sum()))/40000
+                    self.lf.setMul(abs(int(peak)/16000))
+                    self.env.dur = abs(int(peak)/500)
                     self.env.play()
                 print(self.pcounter, "  ", end="")
                 print(peak)
+                minima=argrelextrema(samples, np.less)
+                self.peaks.append(sum(minima[0])/len(minima[0]/2))
+                self.peaks = self.peaks[-100:] #only keep the last 100 for averaging
                 pulse = pulse.assign(pulse=[samples])
-                self.df = self.df.append(pulse, ignore_index=True,sort=False)
+                if self.save_data:
+                    self.df = self.df.append(pulse, ignore_index=True,sort=False)
                 self.pcounter+=1
                 # calculate pulse rate in counts per second
                 dt = (now-self.lastupdate)
@@ -145,12 +153,15 @@ class Scope(QtGui.QMainWindow):
                 cps2 = 1.0 / dt
                 self.lastupdate = now
                 self.cps = self.cps * 0.9 + cps2 * 0.1 # simple weighted average
-                tx = 'Mean pulse rate:  {cps:.3f} CPS'.format(cps=self.cps )
-                self.label.setText(tx)
+                tx = 'Mean pulse rate:  {cps:.1f} CPS'.format(cps=self.cps )
+                self.label.setText(tx + ", THL (red): " + str(self.thl) + ", cursor(green): " + str(self.hl) + ", (avg peak: "+str(round(sum(self.peaks)/100,1)) + ")")
                 self.ydata=np.frombuffer(in_data, dtype=np.int16)
                 self.frame_counter+=frame_count
-                self.h2.setData(self.ydata)
+                if not self.paused:
+                    self.h2.setData(self.ydata)
             self.thlp.setData(FRAME_SIZE*[self.thl])
+            self.hlp.setData(FRAME_SIZE*[self.hl]) #draw green highlight line
+
             return (in_data, pyaudio.paContinue)
  
     
@@ -167,7 +178,9 @@ class Scope(QtGui.QMainWindow):
 
         self.otherplot = self.canvas.addPlot()        
         self.h2 = self.otherplot.plot(pen='y')
-        self.thlp = self.otherplot.plot(pen='y')
+        self.thlp = self.otherplot.plot(pen='r')
+        self.hlp = self.otherplot.plot(pen='g')
+
 
         self.p = pyaudio.PyAudio()
         self.stream = self.p.open(format=pyaudio.paInt16, channels=1, rate=RATE, input=True, frames_per_buffer=FRAME_SIZE,stream_callback=audio_callback)
@@ -182,24 +195,56 @@ class Scope(QtGui.QMainWindow):
         self.cps = 0.
         self.lastupdate = time.time()
         
+        # keyboard shortcuts
         
-        self.sh = QtGui.QShortcut(QtGui.QKeySequence("+"), self, self.thl_down); 
+        self.sh = QtGui.QShortcut(QtGui.QKeySequence("+"), self, self.thl_down)
         self.sh.setContext(QtCore.Qt.ApplicationShortcut)
-        self.sh2 = QtGui.QShortcut(QtGui.QKeySequence("-"), self, self.thl_up); 
+        self.sh2 = QtGui.QShortcut(QtGui.QKeySequence("-"), self, self.thl_up)
         self.sh2.setContext(QtCore.Qt.ApplicationShortcut)     
+
+        self.sh3 = QtGui.QShortcut(QtGui.QKeySequence("7"), self, partial(self.hl_up,1)) 
+        self.sh3.setContext(QtCore.Qt.ApplicationShortcut)
+        self.sh4 = QtGui.QShortcut(QtGui.QKeySequence("1"), self, partial(self.hl_down,1)) 
+        self.sh4.setContext(QtCore.Qt.ApplicationShortcut)
+
+        self.sh5 = QtGui.QShortcut(QtGui.QKeySequence("8"), self, partial(self.hl_up,10)) 
+        self.sh5.setContext(QtCore.Qt.ApplicationShortcut)
+        self.sh6 = QtGui.QShortcut(QtGui.QKeySequence("2"), self, partial(self.hl_down,10)) 
+        self.sh6.setContext(QtCore.Qt.ApplicationShortcut)
+        
+        self.sh7 = QtGui.QShortcut(QtGui.QKeySequence("9"), self, partial(self.hl_up,100)) 
+        self.sh7.setContext(QtCore.Qt.ApplicationShortcut)
+        self.sh8 = QtGui.QShortcut(QtGui.QKeySequence("3"), self, partial(self.hl_down,100)) 
+        self.sh8.setContext(QtCore.Qt.ApplicationShortcut)
+
+        self.sh9 = QtGui.QShortcut(QtGui.QKeySequence(" "), self, self.toggle_pause) 
+        self.sh9.setContext(QtCore.Qt.ApplicationShortcut)
+
         #self.sh3 = QtGui.QShortcut(QtGui.QKeySequence("Ctrl+C"), self.close)
         #self.sh.setContext(QtCore.Qt.ApplicationShortcut)
 
         #### Start  #####################
         self.stream.start_stream()
     
+    def toggle_pause(self):
+        self.paused = not self.paused
+        
+    
     def thl_up(self):
         self.thl+=1
-        print(self.thl)
+        #print(self.thl)
 
     def thl_down(self):
-        print(self.thl)
+        #print(self.thl)
         self.thl-=1
+
+    def hl_up(self,i):
+        self.hl+=i
+        #print(self.hl)
+
+    def hl_down(self,i):
+        #print(self.thl)
+        self.hl-=i
         
     def close_stream(self):
         self.stream.close()
