@@ -246,11 +246,11 @@ L DIY_detector-custom-parts:TL072 U1
 U 1 1 4FA69492
 P 4550 3550
 F 0 "U1" H 4550 3150 60  0000 C CNN
-F 1 "TL072" H 4500 3950 60  0000 C CNN
+F 1 "TLE2072" H 4500 3950 60  0000 C CNN
 F 2 "Housings_DIP:DIP-8_W7.62mm_LongPads" H 4550 3550 50  0001 C CNN
 F 3 "" H 4550 3550 50  0001 C CNN
 F 4 "TI" H -1200 -350 50  0001 C CNN "MFG"
-F 5 "TL072ACP " H -1200 -350 50  0001 C CNN "MFG_PN"
+F 5 "TLE2072CP" H -1200 -350 50  0001 C CNN "MFG_PN"
 F 6 "Farnell" H -1200 -350 50  0001 C CNN "VENDOR"
 F 7 "1103005" H -1200 -350 50  0001 C CNN "VENDOR_PN"
 	1    4550 3550
@@ -433,7 +433,7 @@ Wire Wire Line
 	6500 4200 6500 4350
 Wire Wire Line
 	6950 4200 6950 4350
-Text Notes 2700 2400 0    50   ~ 0
+Text Notes 2700 2350 0    50   ~ 0
 one 5 pF capcitor can be used alterrnativly,\nC1 or C2 must be shorted in this case with \nsolder, a piece of wire or a 0 Ohm reisitor
 $Comp
 L Connector:Conn_Coaxial J3
@@ -479,12 +479,12 @@ $EndComp
 $Comp
 L power:+9V #PWR0105
 U 1 1 5AFA45C5
-P 6950 2850
-F 0 "#PWR0105" H 6950 2700 50  0001 C CNN
-F 1 "+9V" H 6965 3023 50  0000 C CNN
-F 2 "" H 6950 2850 50  0001 C CNN
-F 3 "" H 6950 2850 50  0001 C CNN
-	1    6950 2850
+P 6950 3050
+F 0 "#PWR0105" H 6950 2900 50  0001 C CNN
+F 1 "+9V" H 6965 3223 50  0000 C CNN
+F 2 "" H 6950 3050 50  0001 C CNN
+F 3 "" H 6950 3050 50  0001 C CNN
+	1    6950 3050
 	1    0    0    -1  
 $EndComp
 Connection ~ 6950 3050
@@ -624,8 +624,6 @@ F 7 "9473416" H -400 -350 50  0001 C CNN "VENDOR_PN"
 	1    8050 3050
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	6950 2850 6950 3050
 $Comp
 L Mechanical:MountingHole_Pad MK5
 U 1 1 5AFD6430
@@ -935,8 +933,8 @@ F 3 "" H 8150 3900 50  0001 C CNN
 	1    8150 3900
 	1    0    0    -1  
 $EndComp
-Text Notes 850  5100 0    50   ~ 0
-For measuing alpha particles, one BPX61 with a destroyed glass window\nis recomemnded. Alternatively up to 4 x BPW34F diodes can be \npopulated like in version 1.1. In this case only electrons will be detectable.
+Text Notes 1050 6400 0    79   ~ 0
+For measuing alpha particles, one BPX61 with a destroyed glass window is needed. \nAlternatively up to 4 x BPW34F diodes can be populated like in V1.1 of the board. \nIn this case mostly electrons will be detectable (plus a few gammas).\n\nFollowing changes are need for the 4-diode variant using BPW34F diodes:\nR3 = 10 M\nR4 = 1k\nR5= 100k\nR8 = 0 (short with a wire)\nC4 = 100n\nC6 = 10p\nC9 = not needed (do not populate)\n\n
 $Comp
 L Device:R R8
 U 1 1 5D428EEE
@@ -1003,17 +1001,6 @@ F 3 "" H 6150 3050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:+9V #PWR0111
-U 1 1 5D4746DF
-P 5250 3300
-F 0 "#PWR0111" H 5250 3150 50  0001 C CNN
-F 1 "+9V" H 5265 3473 50  0000 C CNN
-F 2 "" H 5250 3300 50  0001 C CNN
-F 3 "" H 5250 3300 50  0001 C CNN
-	1    5250 3300
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:+9V #PWR0112
 U 1 1 5D474D7F
 P 3350 3050
@@ -1031,10 +1018,7 @@ This passive output filter limits the high frequency band\n(steep alpha peaks) a
 Wire Wire Line
 	5200 3800 6150 3800
 Wire Wire Line
-	5250 3300 5250 3900
-Wire Wire Line
 	5250 3300 5200 3300
-Connection ~ 5250 3300
 $Comp
 L Connector:Conn_01x02_Female J1
 U 1 1 5D46E8CB
@@ -1109,6 +1093,22 @@ Wire Wire Line
 	7650 3150 8450 3150
 Wire Wire Line
 	8900 3600 8700 3600
-Text Notes 2250 2900 0    39   ~ 0
+Text Notes 2200 2900 0    39   ~ 0
 R3 should be either an SMD \n0805 part (preferred) or an \nupright mountd THT part\n
+$Comp
+L power:+9V #PWR0111
+U 1 1 5D4746DF
+P 5250 3050
+F 0 "#PWR0111" H 5250 2900 50  0001 C CNN
+F 1 "+9V" H 5265 3223 50  0000 C CNN
+F 2 "" H 5250 3050 50  0001 C CNN
+F 3 "" H 5250 3050 50  0001 C CNN
+	1    5250 3050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5250 3300 5250 3900
+Wire Wire Line
+	5250 3300 5250 3050
+Connection ~ 5250 3300
 $EndSCHEMATC
