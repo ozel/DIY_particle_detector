@@ -95,7 +95,7 @@ This python script converts the measurement data into time series histograms and
 ## Reference measurements and plots
 
 Several reference measurements have been taken and stored in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data).
-If this whole respository is cloned using git, the [git GLS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).
+If this whole respository is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).
 The data files can be downloaded alternatively from this Zenodo archive: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.3361764.svg)](https://doi.org/10.5281/zenodo.3361764).
 
 Overview on reference measurements:
