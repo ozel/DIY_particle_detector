@@ -12,18 +12,19 @@ The size of the pulse is proportional to the energy deposited by the ionising ra
 
 A superposition of several recorded pulse waveforms from electrons of beta decays (KCl salt sample, more info below):
 
-![some pulse rain](images/pulse_rain.png)
+![some pulse rain](images/pulse_rain.png "output signals of the detector")
 
 Black lines in the upper area represent electronic noise, detected signal pulses from the natural radioactivity of potassium (isotope K-40) are highlighted in red.
 
 ## Hardware
 
-<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="350"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="350">
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="350"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="350">
 
 
 The open hardware design files are relased under the CERN OHL licence version 1.2.
 ### Detector Variants
 The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) contains remarks for using the same circuit board with two partially different sets of components (assembly variants):
+
 * ***Alpha-spectrometer*** measuring energies of alpha particles and electrons using one BPX61 diode.
   After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (cut into the border of the TO metal case with small pliers to crack the glass). 
   The circuit works most precise with only one BPX61 diode (lowest electronic noise) and was specificaly tuned for this scenario.<br/>
@@ -37,12 +38,12 @@ Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 wi
 
 Renderings showing the top side of the board with one BPX61 diode on the left and the backside with a dual-stage operational amplifier circuit optimised to produce 1-2 ms long voltage pulses per particle:
 
-<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_top.png" height="170"><img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/3D_bottom.png" height="170">
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top.png" height="170"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom.png" height="170">
 
 Mircoscope image of Osram BPX61 diode below, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
 Care must be taken in order to keep the bond wire in place when the glass window is removed.
 
-<img src="https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
 
 ### General Requirements
 
@@ -50,7 +51,7 @@ Care must be taken in order to keep the bond wire in place when the glass window
   See pictures above and the schematics for corresponding part numbers of specific aluminium cases that fit.
 * 9 V battery. NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise, always use batteries)
 * Signal output is in the range of +/- 1 V and compatible with an audio/microphone input such as a headset connector of a mobile phone or laptop (or an oscilloscope if available)
-* <img src="https://github.com/ozel/DIY_particle_detector/blob/master/images/low-cost_usb_audio_interfaces.jpg" width="300">
+* <img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/low-cost_usb_audio_interfaces.jpg" width="300">
 
   For higher precision and better reproducability of measurements, a small USB soundcard (< 10 EUR) is recommended:
   The ICY-BOX IB-AC527 on the left and the K&ouml;nig Electronic CMP-SOUNDUSB12 on the right ("3D Sound Controller 5.1") use both a chip series from C-Media Electronics Inc: 
@@ -80,10 +81,11 @@ It consists of two parts:
 
 ### Recording Software
 Two kinds of software for recording the voltage pulses are developed:
+
 * A [web browser application](https://ozel.github.io/DIY_particle_detector/data_recording_software/webGui/) based on the Web Audio API of modern browsers (recent Chrome and Firefox versions work best), compatible with mobile/smartphone and desktop operating systems.
   For further notes on its implementation and usage please refer to [pulse_recorder.js](https://github.com/ozel/DIY_particle_detector/blob/master/data_recording_software/webGui/js/pulse_recorder.js). 
+  <img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/webGui_screenshot.png" alt="A single pulse recorded by the web browser GUI." width="600">
 
-  <img src="https://github.com/ozel/DIY_particle_detector/blob/master/images/webGui_screenshot.png" alt="A single pulse recorded by the web browser GUI." width="600">
 * A [python script](https://github.com/ozel/DIY_particle_detector/blob/master/data_recording_software/pulse_recorder.py). Ideal for longer measurements, e.g. over night. The reference measurements listed below have been taken with this software.
 
 ### Data Analysis
@@ -117,7 +119,7 @@ C-V curves of several diodes of the BPW34 series and BXP61 type have been taken 
 With about 8 V on the cathode, the typical sensitive layer thickness is about 50 um which corresponds well with the recorded energy spectra. 
 Based on the C-V curves, the following doping profiles are derived:
 
-<img src="images/Neff_10diodes_HR.png" width="550">
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Neff_10diodes_HR.png" width="550">
 
 The effective charge carrier concentration 'Neff' is on average about half of the value reported in 2008 by [Ravotti et al.](http://cds.cern.ch/record/1169276/files/04636908.pdf) which can be explained by manufacturing process variations. The similarity of the curve shapes confirms that the investigated diodes use either the same or at least very similar silicon chips. The regular micropattern visible in the doping profile curves is a measurement artefact which is caused by internal rounding errors of the C-V measurement device. The thin double lines indicate the error range of the instrument as stated by its manufacturer (Keysight B1500A with the MFCMU module). 
 
