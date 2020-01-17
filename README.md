@@ -42,7 +42,7 @@ Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 wi
 Mircoscope image of Osram BPX61 diode below on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
 Care must be taken in order to keep the bond wire in place when the glass window is removed: The right picture shows the mounted BPX61 diode after its glass windows was removed by cutting small dents into the border of the TO metal case with small pliers to crack the glass.
 
-<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_onboard.jpg" height="300">
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BPX61_onboard.jpg" height="300">
 
 
 ### General Requirements
