@@ -27,7 +27,7 @@ The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/maste
 
 * ***Alpha-spectrometer*** measuring energies of alpha particles and electrons using one BPX61 diode.<br/>
   <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top_alpha.png" height="200"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom_alpha.png" height="200"><br/>
-  After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (cut into the border of the TO metal case with small pliers to crack the glass). 
+  After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (see close-up pictures below). 
   The circuit works most precise with only one BPX61 diode (lowest electronic noise) and was specificaly tuned for this scenario.<br/>
   [parts overview and assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf), [scientific article incl. reference energy calibration](https://doi.org/10.3390/s19194264)
 
@@ -39,10 +39,11 @@ The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/maste
 
 Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used for ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their general efficiency for detecting gamma photons is quite low.  
 
-Mircoscope image of Osram BPX61 diode below, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
-Care must be taken in order to keep the bond wire in place when the glass window is removed.
+Mircoscope image of Osram BPX61 diode below on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
+Care must be taken in order to keep the bond wire in place when the glass window is removed: The right picture shows the mounted BPX61 diode after its glass windows was removed by cutting small dents into the border of the TO metal case with small pliers to crack the glass.
 
-<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_onboard.jpg" height="300">
+
 
 ### General Requirements
 
