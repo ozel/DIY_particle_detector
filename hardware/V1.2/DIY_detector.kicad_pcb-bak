@@ -11,9 +11,9 @@
 
   (page A4)
   (title_block
-    (title "DIY detector")
+    (title "DIY Particle Detector")
     (date 2018-06-01)
-    (rev V1.1)
+    (rev V1.2)
     (company CERN)
     (comment 1 "CERN open hardware license V1.2")
     (comment 2 "Oliver Keller")
@@ -830,7 +830,7 @@
       (net 11 "Net-(C6-Pad2)"))
     (pad 2 thru_hole oval (at 10.16 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 6 "Net-(C10-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_10K_P10.16mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -868,7 +868,7 @@
       (net 8 /Output))
     (pad 2 thru_hole oval (at 10.16 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 GND))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_2K2_P10.16mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -896,14 +896,17 @@
     (fp_line (start -1.05 -1.15) (end 3.55 -1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end 3.55 1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end -1.05 1.15) (layer B.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0 270) (layer B.Fab)
-      (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
+    (fp_text user VARIANT=DNP (at 1.25 0 270) (layer Eco1.User)
+      (effects (font (size 1 1) (thickness 0.15)))
+    )
+    (fp_text user 3D= (at 0 0 270) (layer Eco1.User)
+      (effects (font (size 1 1) (thickness 0.15)))
     )
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 6 "Net-(C10-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 GND))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -933,8 +936,8 @@
       (net 3 "Net-(C2-Pad2)"))
     (pad 2 thru_hole oval (at 2.54 0 90) (size 1.4 1.4) (drill 0.7) (layers *.Cu *.Mask)
       (net 1 "Net-(C1-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_SMD.3dshapes/R_0805_2012Metric.wrl
-      (offset (xyz 1.27 0 0))
+    (model ${KIPRJMOD}/3D/R_0805_2012Metric_THTorigin.wrl
+      (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
     )
@@ -948,7 +951,7 @@
     (fp_text reference U1 (at 3.81 2.33) (layer B.SilkS)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
-    (fp_text value TL072 (at 3.81 -9.95) (layer B.Fab)
+    (fp_text value TLE2072 (at 3.81 -9.95) (layer B.Fab)
       (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
     )
     (fp_arc (start 3.81 1.33) (end 2.81 1.33) (angle 180) (layer B.SilkS) (width 0.12))
@@ -985,12 +988,7 @@
       (net 4 GND))
     (pad 8 thru_hole oval (at 7.62 0) (size 2.4 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 7 +9V))
-    (model ${KISYS3DMOD}/Housings_DIP.3dshapes/DIP-8_W7.62mm.wrl
-      (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 0))
-    )
-    (model "/Library/Application Support/kicad/modules/packages3d/Package_DIP.3dshapes/DIP-8_W7.62mm.step"
+    (model ${KIPRJMOD}/3D/TLE2072.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1159,7 +1157,7 @@
       (net 4 GND))
     (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/CP_Radial_D6.3mm_P2.50mm.wrl
       (at (xyz 0 0 0))
-      (scale (xyz 1 1 1))
+      (scale (xyz 1 1 1.7))
       (rotate (xyz 0 0 0))
     )
   )
@@ -1185,14 +1183,11 @@
     (fp_line (start -1.05 -1.15) (end 3.55 -1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end 3.55 1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end -1.05 1.15) (layer B.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0 270) (layer B.Fab)
-      (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-    )
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 1 "Net-(C1-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 "Net-(C1-Pad2)"))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1220,14 +1215,11 @@
     (fp_line (start -1.05 -1.15) (end 3.55 -1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end 3.55 1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end -1.05 1.15) (layer B.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0) (layer B.Fab)
-      (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-    )
     (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 2 "Net-(C1-Pad2)"))
     (pad 2 thru_hole circle (at 2.5 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 3 "Net-(C2-Pad2)"))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1262,7 +1254,7 @@
       (net 5 "Net-(C3-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 GND))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1290,14 +1282,11 @@
     (fp_line (start -1.05 -1.15) (end 3.55 -1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end 3.55 1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end -1.05 1.15) (layer B.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0) (layer B.Fab)
-      (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-    )
     (pad 1 thru_hole circle (at 0 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 3 "Net-(C2-Pad2)"))
     (pad 2 thru_hole circle (at 2.5 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 9 "Net-(C4-Pad2)"))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.8mm_W2.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1325,14 +1314,11 @@
     (fp_line (start -1.05 1.15) (end 3.55 1.15) (layer F.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end 3.55 -1.15) (layer F.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end -1.05 -1.15) (layer F.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0 180) (layer F.Fab)
-      (effects (font (size 1 1) (thickness 0.15)))
-    )
     (pad 1 thru_hole circle (at 0 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 7 +9V))
     (pad 2 thru_hole circle (at 2.5 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 GND))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1360,14 +1346,11 @@
     (fp_line (start -1.05 -1.15) (end 3.55 -1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end 3.55 1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end -1.05 1.15) (layer B.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0 270) (layer B.Fab)
-      (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-    )
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 10 "Net-(C6-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 11 "Net-(C6-Pad2)"))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1402,7 +1385,7 @@
       (net 12 "Net-(C7-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 GND))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1430,14 +1413,11 @@
     (fp_line (start -1.05 -1.15) (end 3.55 -1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 -1.15) (end 3.55 1.15) (layer B.CrtYd) (width 0.05))
     (fp_line (start 3.55 1.15) (end -1.05 1.15) (layer B.CrtYd) (width 0.05))
-    (fp_text user %R (at 1.25 0 90) (layer B.Fab)
-      (effects (font (size 1 1) (thickness 0.15)) (justify mirror))
-    )
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 6 "Net-(C10-Pad1)"))
     (pad 2 thru_hole circle (at 2.5 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 8 /Output))
-    (model ${KISYS3DMOD}/Capacitor_THT.3dshapes/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
+    (model ${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1475,7 +1455,7 @@
       (net 5 "Net-(C3-Pad1)"))
     (pad 2 thru_hole oval (at 7.62 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 4 GND))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_15K_P7.62mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1513,7 +1493,7 @@
       (net 10 "Net-(C6-Pad1)"))
     (pad 2 thru_hole oval (at 7.62 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 9 "Net-(C4-Pad2)"))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_4K7_P7.62mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1551,7 +1531,7 @@
       (net 11 "Net-(C6-Pad2)"))
     (pad 2 thru_hole oval (at 7.62 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 10 "Net-(C6-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_1M_P7.62mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1589,7 +1569,7 @@
       (net 7 +9V))
     (pad 2 thru_hole oval (at 7.62 0 180) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 5 "Net-(C3-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_4K7_P7.62mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1646,7 +1626,7 @@
     (fp_text reference D1 (at 2.34 -0.05 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value "not populated" (at 2.54 3.17 270) (layer F.Fab)
+    (fp_text value BPX61 (at 2.54 3.17 270) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start 3.79 1.5) (end 3.79 -1.5) (layer F.Fab) (width 0.1))
@@ -1689,10 +1669,10 @@
       (net 4 GND))
     (pad 1 thru_hole rect (at 0 0 90) (size 1.7 1.7) (drill 0.8) (layers *.Cu *.Mask)
       (net 1 "Net-(C1-Pad1)"))
-    (model ${KISYS3DMOD}/Package_TO_SOT_THT.3dshapes/TO-39-2_Window.wrl
-      (offset (xyz 5 0 -5))
+    (model ${KIPRJMOD}/3D/BPX61.wrl
+      (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
-      (rotate (xyz 0 0 180))
+      (rotate (xyz 0 0 0))
     )
   )
 
@@ -1704,7 +1684,7 @@
     (fp_text reference D2 (at 2.25 0.05 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value "not populated" (at 1.27 3.17 90) (layer F.Fab)
+    (fp_text value DNP (at 1.27 3.17 90) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start 6.18 2.4) (end -1.1 2.4) (layer F.CrtYd) (width 0.05))
@@ -1757,7 +1737,7 @@
     (fp_text reference D3 (at 2.55 0.05 90) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value "not populated" (at 2.54 3.17 90) (layer F.Fab)
+    (fp_text value DNP (at 2.54 3.17 90) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start 3.79 1.5) (end 3.79 -1.5) (layer F.Fab) (width 0.1))
@@ -1810,7 +1790,7 @@
     (fp_text reference D4 (at 2.54 -0.05 270) (layer F.SilkS)
       (effects (font (size 1 1) (thickness 0.15)))
     )
-    (fp_text value BPX61 (at 2.54 3.17 270) (layer F.Fab)
+    (fp_text value DNP (at 2.54 3.17 270) (layer F.Fab)
       (effects (font (size 1 1) (thickness 0.15)))
     )
     (fp_line (start 6.18 2.4) (end -1.1 2.4) (layer F.CrtYd) (width 0.05))
@@ -1886,7 +1866,7 @@
       (net 7 +9V))
     (pad 2 thru_hole oval (at 10.16 0 90) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 12 "Net-(C7-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_10K_P10.16mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -1924,7 +1904,7 @@
       (net 4 GND))
     (pad 1 thru_hole circle (at 0 0 270) (size 1.6 1.6) (drill 0.8) (layers *.Cu *.Mask)
       (net 12 "Net-(C7-Pad1)"))
-    (model ${KISYS3DMOD}/Resistor_THT.3dshapes/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.wrl
+    (model ${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_10K_P10.16mm.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2240,7 +2220,7 @@
   (segment (start 127.975 104.025) (end 131.1205 100.8795) (width 0.25) (layer B.Cu) (net 12))
   (segment (start 127.975 106.15) (end 127.975 104.025) (width 0.25) (layer B.Cu) (net 12))
 
-  (zone (net 4) (net_name GND) (layer F.Cu) (tstamp 5D4ADCD4) (hatch edge 0.508)
+  (zone (net 4) (net_name GND) (layer F.Cu) (tstamp 5E160BA3) (hatch edge 0.508)
     (connect_pads thru_hole_only (clearance 0.2))
     (min_thickness 0.4)
     (fill yes (arc_segments 16) (thermal_gap 0.4) (thermal_bridge_width 0.6) (smoothing chamfer) (radius 1))
@@ -2762,7 +2742,7 @@
       )
     )
   )
-  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 5D4ADCD1) (hatch edge 0.508)
+  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 5E160BA0) (hatch edge 0.508)
     (connect_pads thru_hole_only (clearance 0.25))
     (min_thickness 0.15)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -2780,7 +2760,7 @@
       )
     )
   )
-  (zone (net 0) (net_name "") (layer F.Mask) (tstamp 5D4ADCCE) (hatch edge 0.508)
+  (zone (net 0) (net_name "") (layer F.Mask) (tstamp 5E160B9D) (hatch edge 0.508)
     (connect_pads thru_hole_only (clearance 0.25))
     (min_thickness 0.15)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -2798,7 +2778,7 @@
       )
     )
   )
-  (zone (net 0) (net_name "") (layer F.Mask) (tstamp 5D4ADCCB) (hatch edge 0.508)
+  (zone (net 0) (net_name "") (layer F.Mask) (tstamp 5E160B9A) (hatch edge 0.508)
     (connect_pads thru_hole_only (clearance 0.25))
     (min_thickness 0.15)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))
@@ -2816,7 +2796,7 @@
       )
     )
   )
-  (zone (net 4) (net_name GND) (layer B.Cu) (tstamp 5D4ADCC8) (hatch edge 0.508)
+  (zone (net 4) (net_name GND) (layer B.Cu) (tstamp 5E160B97) (hatch edge 0.508)
     (connect_pads thru_hole_only (clearance 0.2))
     (min_thickness 0.1)
     (fill yes (arc_segments 32) (thermal_gap 0.4) (thermal_bridge_width 0.4))
@@ -2837,7 +2817,7 @@
       )
     )
   )
-  (zone (net 4) (net_name GND) (layer B.Cu) (tstamp 5D4ADCC5) (hatch edge 0.508)
+  (zone (net 4) (net_name GND) (layer B.Cu) (tstamp 5E160B94) (hatch edge 0.508)
     (connect_pads thru_hole_only (clearance 0.2))
     (min_thickness 0.1)
     (fill yes (arc_segments 16) (thermal_gap 0.4) (thermal_bridge_width 0.4))
@@ -2858,7 +2838,7 @@
       )
     )
   )
-  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 5D4ADCC2) (hatch edge 0.508)
+  (zone (net 0) (net_name "") (layer B.Mask) (tstamp 5E160B91) (hatch edge 0.508)
     (connect_pads (clearance 0.2))
     (min_thickness 0.254)
     (fill yes (arc_segments 16) (thermal_gap 0.508) (thermal_bridge_width 0.508))

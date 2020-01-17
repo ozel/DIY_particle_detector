@@ -102,6 +102,8 @@ F 4 "Kemet" H -1200 -1550 50  0001 C CNN "MFG"
 F 5 "C320C474M5U5TA" H -1200 -1550 50  0001 C CNN "MFG_PN"
 F 6 "1457660" H -1200 -1550 50  0001 C CNN "FARNELL"
 F 7 "470nf THT" H 4200 1650 50  0001 C CNN "Description"
+F 8 "100n" H 4200 1650 50  0001 C CNN "VALUE_B"
+F 9 "${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl" H 4200 1650 50  0001 C CNN "3D_B"
 	1    4200 1650
 	0    -1   -1   0   
 $EndComp
@@ -117,6 +119,8 @@ F 4 "Multicomp" H -1300 -1550 50  0001 C CNN "MFG"
 F 5 "MCMF006FF1004A50" H -1300 -1550 50  0001 C CNN "MFG_PN"
 F 6 "2401807" H -1300 -1550 50  0001 C CNN "FARNELL"
 F 7 "1Mega 1% THT" H 5500 1650 50  0001 C CNN "Description"
+F 8 "100k" H 5500 1650 50  0001 C CNN "VALUE_B"
+F 9 "${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_100K_P7.62mm.wrl" H 5500 1650 50  0001 C CNN "3D_B"
 	1    5500 1650
 	0    1    1    0   
 $EndComp
@@ -132,6 +136,8 @@ F 4 "Multicomp" H -1200 -1550 50  0001 C CNN "MFG"
 F 5 "MCMF006FF4701A50" H -1200 -1550 50  0001 C CNN "MFG_PN"
 F 6 "2401772" H -1200 -1550 50  0001 C CNN "FARNELL"
 F 7 "4.7k 1% THT" H 4750 1650 50  0001 C CNN "Description"
+F 8 "1k" H 4750 1650 50  0001 C CNN "VALUE_B"
+F 9 "${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_1K_P7.62mm.wrl" H 4750 1650 50  0001 C CNN "3D_B"
 	1    4750 1650
 	0    1    1    0   
 $EndComp
@@ -222,23 +228,27 @@ F 4 "TE Connectivity" H 3400 1650 50  0001 C CNN "MFG"
 F 5 "RH73H2A40MKTN" H 3400 1650 50  0001 C CNN "MFG_PN"
 F 6 "1174521" H 3400 1650 50  0001 C CNN "FARNELL"
 F 7 "40Mega 10% 0805 SMD" H 3400 1650 50  0001 C CNN "Description"
+F 8 "10M" H 3400 1650 50  0001 C CNN "VALUE_B"
+F 9 "${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_10M_P2.54mm.wrl" H 3400 1650 50  0001 C CNN "3D_B"
 	1    3400 1650
 	0    1    1    0   
 $EndComp
 $Comp
 L Sensor_Optical:BPW34 D4
 U 1 1 4FA6949D
-P 2650 2650
-F 0 "D4" H 2700 2750 40  0000 C CNN
-F 1 "BPX61" H 2650 2550 40  0000 C CNN
-F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 2650 2650 50  0001 C CNN
-F 3 "" H 2650 2650 50  0001 C CNN
-F 4 "Osram" H 2650 2650 50  0001 C CNN "MFG"
-F 5 "BPX61" H 2650 2650 50  0001 C CNN "MFG_PN"
-F 6 "2981630" H 2650 2650 50  0001 C CNN "FARNELL"
-F 7 "654-7785" H 2650 2650 50  0001 C CNN "RS Online"
-F 8 "silicon PIN photodiode" H 2650 2650 50  0001 C CNN "Description"
-	1    2650 2650
+P 1600 2650
+F 0 "D4" H 1650 2750 40  0000 C CNN
+F 1 "DNP" H 1600 2550 40  0000 C CNN
+F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 1600 2650 50  0001 C CNN
+F 3 "" H 1600 2650 50  0001 C CNN
+F 4 "Osram" H 1600 2650 50  0001 C CNN "MFG"
+F 5 "BPX61" H 1600 2650 50  0001 C CNN "MFG_PN"
+F 6 "2981630" H 1600 2650 50  0001 C CNN "FARNELL"
+F 7 "654-7785" H 1600 2650 50  0001 C CNN "RS Online"
+F 8 "silicon PIN photodiode" H 1600 2650 50  0001 C CNN "Description"
+F 9 "${KIPRJMOD}/3D/BPW34F.wrl" H 1600 2650 50  0001 C CNN "3D_B"
+F 10 "BPW34F" H 1600 2650 50  0001 C CNN "VALUE_B"
+	1    1600 2650
 	0    1    1    0   
 $EndComp
 $Comp
@@ -558,31 +568,17 @@ F 4 "Suntan" H 5500 1450 50  0001 C CNN "MFG"
 F 5 "TS170R1H332KSBBA0R" H 5500 1450 50  0001 C CNN "MFG_PN"
 F 6 "2901293" H 5500 1450 50  0001 C CNN "FARNELL"
 F 7 "3.3nF THT" H 5500 1450 50  0001 C CNN "Description"
+F 8 "10p" H 5500 1450 50  0001 C CNN "VALUE_B"
+F 9 "${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl" H 5500 1450 50  0001 C CNN "3D_B"
 	1    5500 1450
 	0    -1   -1   0   
 $EndComp
 $Comp
 L Sensor_Optical:BPW34 D3
 U 1 1 5AFA9712
-P 2300 2650
-F 0 "D3" H 2350 2750 40  0000 C CNN
-F 1 "see comments" H 2300 2550 40  0000 C CNN
-F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 2300 2650 50  0001 C CNN
-F 3 "" H 2300 2650 50  0001 C CNN
-F 4 "Osram/Vishay" H 2300 2650 50  0001 C CNN "MFG"
-F 5 "BPW34F/FA" H 2300 2650 50  0001 C CNN "MFG_PN"
-F 6 "2981621" H 2300 2650 50  0001 C CNN "FARNELL"
-F 7 "654-7921" H 2300 2650 50  0001 C CNN "RS Online"
-F 8 "silicon PIN photodiode" H 2300 2650 50  0001 C CNN "Description"
-	1    2300 2650
-	0    1    1    0   
-$EndComp
-$Comp
-L Sensor_Optical:BPW34 D2
-U 1 1 5AFA9764
 P 1950 2650
-F 0 "D2" H 2000 2750 40  0000 C CNN
-F 1 "see comments" H 1950 2550 40  0000 C CNN
+F 0 "D3" H 2000 2750 40  0000 C CNN
+F 1 "DNP" H 1950 2550 40  0000 C CNN
 F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 1950 2650 50  0001 C CNN
 F 3 "" H 1950 2650 50  0001 C CNN
 F 4 "Osram/Vishay" H 1950 2650 50  0001 C CNN "MFG"
@@ -590,23 +586,45 @@ F 5 "BPW34F/FA" H 1950 2650 50  0001 C CNN "MFG_PN"
 F 6 "2981621" H 1950 2650 50  0001 C CNN "FARNELL"
 F 7 "654-7921" H 1950 2650 50  0001 C CNN "RS Online"
 F 8 "silicon PIN photodiode" H 1950 2650 50  0001 C CNN "Description"
+F 9 "${KIPRJMOD}/3D/BPW34F.wrl" H 1950 2650 50  0001 C CNN "3D_B"
+F 10 "BPW34F" H 1950 2650 50  0001 C CNN "VALUE_B"
 	1    1950 2650
+	0    1    1    0   
+$EndComp
+$Comp
+L Sensor_Optical:BPW34 D2
+U 1 1 5AFA9764
+P 2300 2650
+F 0 "D2" H 2350 2750 40  0000 C CNN
+F 1 "DNP" H 2300 2550 40  0000 C CNN
+F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 2300 2650 50  0001 C CNN
+F 3 "" H 2300 2650 50  0001 C CNN
+F 4 "Osram/Vishay" H 2300 2650 50  0001 C CNN "MFG"
+F 5 "BPW34F/FA" H 2300 2650 50  0001 C CNN "MFG_PN"
+F 6 "2981621" H 2300 2650 50  0001 C CNN "FARNELL"
+F 7 "654-7921" H 2300 2650 50  0001 C CNN "RS Online"
+F 8 "silicon PIN photodiode" H 2300 2650 50  0001 C CNN "Description"
+F 9 "${KIPRJMOD}/3D/BPW34F.wrl" H 2300 2650 50  0001 C CNN "3D_B"
+F 10 "BPW34F" H 2300 2650 50  0001 C CNN "VALUE_B"
+	1    2300 2650
 	0    1    1    0   
 $EndComp
 $Comp
 L Sensor_Optical:BPW34 D1
 U 1 1 5AFA97B6
-P 1600 2650
-F 0 "D1" H 1650 2750 40  0000 C CNN
-F 1 "see comments" H 1600 2550 40  0000 C CNN
-F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 1600 2650 50  0001 C CNN
-F 3 "" H 1600 2650 50  0001 C CNN
-F 4 "Osram/Vishay" H 1600 2650 50  0001 C CNN "MFG"
-F 5 "BPW34F/FA" H 1600 2650 50  0001 C CNN "MFG_PN"
-F 6 "2981621" H 1600 2650 50  0001 C CNN "FARNELL"
-F 7 "654-7921" H 1600 2650 50  0001 C CNN "RS Online"
-F 8 "silicon PIN photodiode" H 1600 2650 50  0001 C CNN "Description"
-	1    1600 2650
+P 2650 2650
+F 0 "D1" H 2700 2750 40  0000 C CNN
+F 1 "BPX61" H 2650 2550 40  0000 C CNN
+F 2 "Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08" H 2650 2650 50  0001 C CNN
+F 3 "" H 2650 2650 50  0001 C CNN
+F 4 "Osram/Vishay" H 2650 2650 50  0001 C CNN "MFG"
+F 5 "BPW34F/FA" H 2650 2650 50  0001 C CNN "MFG_PN"
+F 6 "2981621" H 2650 2650 50  0001 C CNN "FARNELL"
+F 7 "654-7921" H 2650 2650 50  0001 C CNN "RS Online"
+F 8 "silicon PIN photodiode" H 2650 2650 50  0001 C CNN "Description"
+F 9 "${KIPRJMOD}/3D/BPW34F.wrl" H 2650 2650 50  0001 C CNN "3D_B"
+F 10 "BPW34F" H 2650 2650 50  0001 C CNN "VALUE_B"
+	1    2650 2650
 	0    1    1    0   
 $EndComp
 Text Notes 3300 7000 0    50   ~ 0
@@ -936,7 +954,7 @@ F 3 "" H 8050 2750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Text Notes 1450 5900 0    71   ~ 0
-For measuring characteristic energies of alpha particles, one BPX61 with a destroyed glass \nwindow is needed.  Alternatively up to 4 x BPW34F(A) diodes can be populated (like in V1.1). \nIn this case only electrons will be detectable plus few gamma photons as with the BPX61. \nThe advantages of using 4 x BPW34F(A) diodes are: \n- x4 increased sensitivity towards ionizing radiation (x4 sensitive volume)\n- less sensitive to disturbing electromagnetic interferences (due to lower signal amplification)\n- less sensitive to stray light (due to the black plastic cases of the BPW34F(A) diodes)\n- much less susceptible to the microphony effect / mechanical vibrations (due to lower signal amp.)\n\nFollowing changes are need for the 4-diode variant using BPW34F(A) diodes:\nD1 - D4 = BPW34F or BPW34FA, from Osram or Vishay\nR3 = 10M\nR4 = 1k\nR5 = 100k\nR8 = 0 (short with a wire)\nC4 = 100n\nC6 = 10p\nC9 = not needed (do not populate)\n\n
+For measuring characteristic energies of alpha particles, one BPX61 with a destroyed glass \nwindow is needed.  Alternatively up to 4 x BPW34F(A) diodes can be populated (like in V1.1). \nIn this case only electrons will be detectable plus few gamma photons as with the BPX61. \nThe advantages of using 4 x BPW34F(A) diodes are: \n- x4 increased sensitivity towards ionizing radiation (x4 sensitive volume)\n- less sensitive to disturbing electromagnetic interferences (due to lower signal amplification)\n- less sensitive to stray light (due to the black plastic cases of the BPW34F(A) diodes)\n- much less susceptible to the microphony effect / mechanical vibrations (due to lower signal amp.)\n\nFollowing changes are need for the 4-diode variant using BPW34F(A) diodes:\nD1 - D4 = BPW34F or BPW34FA, from Osram or Vishay\nR3 = 10M\nR4 = 1k\nR5 = 100k\nR8 = 0 (short with a wire)\nC4 = 100n\nC6 = 10p\nC9 = not needed (DNP = do not populate)\n\n
 $Comp
 L Device:R R8
 U 1 1 5D428EEE
@@ -949,6 +967,8 @@ F 4 "Multicomp" H -100 -1950 50  0001 C CNN "MFG"
 F 5 "MCMF006FF1002A50" H -100 -1950 50  0001 C CNN "MFG_PN"
 F 6 "2401780" H -100 -1950 50  0001 C CNN "FARNELL"
 F 7 "10k 1% THT" H 7150 2450 50  0001 C CNN "Description"
+F 8 "0" H 7150 2450 50  0001 C CNN "VALUE_B"
+F 9 "${KIPRJMOD}/3D/jumper_wire_P10.16mm.wrl" H 7150 2450 50  0001 C CNN "3D_B"
 	1    7150 2450
 	0    -1   -1   0   
 $EndComp
@@ -966,6 +986,7 @@ F 4 "Suntan" H -1500 -1800 50  0001 C CNN "MFG"
 F 5 "TS170R1H682KSBBA0R" H -1500 -1800 50  0001 C CNN "MFG_PN"
 F 6 "2901297" H -1500 -1800 50  0001 C CNN "FARNELL"
 F 7 "6.8nF THT" H 7400 2600 50  0001 C CNN "Description"
+F 8 "DNP" H 7400 2600 50  0001 C CNN "VALUE_B"
 	1    7400 2600
 	1    0    0    -1  
 $EndComp

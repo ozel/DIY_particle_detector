@@ -25,20 +25,19 @@ The open hardware design files are relased under the CERN OHL licence version 1.
 ### Detector Variants
 The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) contains remarks for using the same circuit board with two partially different sets of components (assembly variants):
 
-* ***Alpha-spectrometer*** measuring energies of alpha particles and electrons using one BPX61 diode.
+* ***Alpha-spectrometer*** measuring energies of alpha particles and electrons using one BPX61 diode.<br/>
+  <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top_alpha.png" height="200"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom_alpha.png" height="200"><br/>
   After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (cut into the border of the TO metal case with small pliers to crack the glass). 
   The circuit works most precise with only one BPX61 diode (lowest electronic noise) and was specificaly tuned for this scenario.<br/>
   [parts overview and assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf), [scientific article incl. reference energy calibration](https://doi.org/10.3390/s19194264)
 
 
-* ***Electron/beta radiation detector*** measuring mostly electrons (plus few gamma photons) with four very low-cost BPW34F or BPW34FA diodes (<1 EUR each). This variant is not able to detect alpha particles but is  easier to operate (less sensitive to visible light and electromagnetic interference, see section on general requirements below). It is also more sensitive towards sources of low intensity (low rate of radioactive decays) since it has four times the sensor volume compared to using only one diode as sensor. This version is ideal for beginners, in total only 8 components are different compared to the alpha-spectrometer variant above.<br/>
+* ***Electron/beta radiation detector*** measuring mostly electrons (plus few gamma photons) with four very low-cost BPW34F or BPW34FA diodes (<1 EUR each).<br/>
+  <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top_electron.png" height="200"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom_electron.png" height="200"><br/>
+  This variant is not able to detect alpha particles but is  easier to operate (less sensitive to visible light and electromagnetic interference, see section on general requirements below). It is also more sensitive towards sources of low intensity (low rate of radioactive decays) since it has four times the sensor volume compared to using only one diode as sensor. This version is ideal for beginners, in total only 8 components are different compared to the alpha-spectrometer variant above.<br/>
   [parts overview and assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20electron%20version.pdf), this assembly variant is similar to the [previous circuit version 1.1](https://github.com/ozel/DIY_particle_detector/tree/master/hardware/V1.1)
 
 Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used for ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their general efficiency for detecting gamma photons is quite low.  
-
-Renderings showing the top side of the board with one BPX61 diode on the left and the backside with a dual-stage operational amplifier circuit optimised to produce 1-2 ms long voltage pulses per particle:
-
-<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top.png" height="170"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom.png" height="170">
 
 Mircoscope image of Osram BPX61 diode below, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
 Care must be taken in order to keep the bond wire in place when the glass window is removed.

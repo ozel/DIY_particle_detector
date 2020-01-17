@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>/home/ozel/Documents/CERN/code/DIY_particle_detector/hardware/V1.2/DIY_detector.sch</source>
+    <date>Do 16 Jan 2020 12:56:36 CET</date>
+    <tool>Eeschema 5.1.5-52549c5~84~ubuntu19.10.1</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>DIY Particle Detector</title>
+        <company>CERN</company>
+        <rev>V1.2</rev>
+        <date>2019-07-31</date>
+        <source>DIY_detector.sch</source>
+        <comment number="1" value="CERN Open Hardware License (CERN OHL V1.2)"/>
+        <comment number="2" value="A spectrometer for measuring the energy of alpha particles and electrons."/>
+        <comment number="3" value="Oliver Keller, oliver.michael.keller@cern.ch"/>
+        <comment number="4" value="Low-Cost DIY Particle Detector for Ionising Radiation"/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="C8">
+      <value>47u</value>
+      <footprint>Capacitors_THT:CP_Radial_D6.3mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">47uF 63V THT</field>
+        <field name="FARNELL">9693033</field>
+        <field name="MFG">Panasonic</field>
+        <field name="MFG_PN">ECA-1JHG470</field>
+      </fields>
+      <libsource lib="Device" part="CP" description="Polarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA698C7</tstamp>
+    </comp>
+    <comp ref="C7">
+      <value>100n</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">100nF THT</field>
+        <field name="FARNELL">2112751</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MC0805Y104M500A2.54MM</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA697AC</tstamp>
+    </comp>
+    <comp ref="R7">
+      <value>10k</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <fields>
+        <field name="Description">10k 1% THT</field>
+        <field name="FARNELL">2401780</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF1002A50</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA697A6</tstamp>
+    </comp>
+    <comp ref="R6">
+      <value>10k</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <fields>
+        <field name="Description">10k 1% THT</field>
+        <field name="FARNELL">2401780</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF1002A50</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA69792</tstamp>
+    </comp>
+    <comp ref="C4">
+      <value>470n</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl</field>
+        <field name="Description">470nf THT</field>
+        <field name="FARNELL">1457660</field>
+        <field name="MFG">Kemet</field>
+        <field name="MFG_PN">C320C474M5U5TA</field>
+        <field name="VALUE_B">100n</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA69707</tstamp>
+    </comp>
+    <comp ref="R5">
+      <value>1M</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_100K_P7.62mm.wrl</field>
+        <field name="Description">1Mega 1% THT</field>
+        <field name="FARNELL">2401807</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF1004A50</field>
+        <field name="VALUE_B">100k</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA696FC</tstamp>
+    </comp>
+    <comp ref="R4">
+      <value>4k7</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_1K_P7.62mm.wrl</field>
+        <field name="Description">4.7k 1% THT</field>
+        <field name="FARNELL">2401772</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF4701A50</field>
+        <field name="VALUE_B">1k</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA696EE</tstamp>
+    </comp>
+    <comp ref="C3">
+      <value>100n</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">100nF THT</field>
+        <field name="FARNELL">2112751</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MC0805Y104M500A2.54MM</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA6962C</tstamp>
+    </comp>
+    <comp ref="C5">
+      <value>100n</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">100nF THT</field>
+        <field name="FARNELL">2112751</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MC0805Y104M500A2.54MM</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA695AB</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>10p</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">10pF THT</field>
+        <field name="FARNELL">1694175</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MC0805N100J101A2.54MM</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA6951A</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>15k</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Description">15k 1% THT</field>
+        <field name="FARNELL">2401785</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF1502A50</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA694DC</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>4k7</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal</footprint>
+      <fields>
+        <field name="Description">4.7k 1% THT</field>
+        <field name="FARNELL">2401772</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF4701A50</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA694D1</tstamp>
+    </comp>
+    <comp ref="R3">
+      <value>40M</value>
+      <footprint>Resistors_THT:R_Axial_DIN0204_L3.6mm_D1.6mm_P2.54mm_Vertical</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/Resistors_THT_custom.3dshapes/res_5band_10M_P2.54mm.wrl</field>
+        <field name="Description">40Mega 10% 0805 SMD</field>
+        <field name="FARNELL">1174521</field>
+        <field name="MFG">TE Connectivity</field>
+        <field name="MFG_PN">RH73H2A40MKTN</field>
+        <field name="VALUE_B">10M</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA694AE</tstamp>
+    </comp>
+    <comp ref="D4">
+      <value>DNP</value>
+      <footprint>Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/BPW34F.wrl</field>
+        <field name="Description">silicon PIN photodiode</field>
+        <field name="FARNELL">2981630</field>
+        <field name="MFG">Osram</field>
+        <field name="MFG_PN">BPX61</field>
+        <field name="RS Online">654-7785</field>
+        <field name="VALUE_B">BPW34F</field>
+      </fields>
+      <libsource lib="Sensor_Optical" part="BPW34" description="Silicon PIN Photodiode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA6949D</tstamp>
+    </comp>
+    <comp ref="U1">
+      <value>TLE2072</value>
+      <footprint>Housings_DIP:DIP-8_W7.62mm_LongPads</footprint>
+      <fields>
+        <field name="Description">TLE2072CP/ACP</field>
+        <field name="FARNELL">3117956 </field>
+        <field name="MFG">TI</field>
+        <field name="MFG_PN">TLE2072ACP</field>
+      </fields>
+      <libsource lib="DIY_detector-custom-parts" part="TL072" description=""/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>4FA69492</tstamp>
+    </comp>
+    <comp ref="C10">
+      <value>100n</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">100nF THT</field>
+        <field name="FARNELL">2112751</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MC0805Y104M500A2.54MM</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B0272F2</tstamp>
+    </comp>
+    <comp ref="J3">
+      <value>BNC socket</value>
+      <fields>
+        <field name="Description">male BNC wall socket</field>
+        <field name="FARNELL">1169699</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">13-25</field>
+      </fields>
+      <libsource lib="Connector" part="Conn_Coaxial" description="coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF8AE41</tstamp>
+    </comp>
+    <comp ref="BT1">
+      <value>9V battery clip</value>
+      <fields>
+        <field name="FARNELL">2817539</field>
+        <field name="MFG">CLIFF</field>
+        <field name="MFG_PN">FC6830</field>
+      </fields>
+      <libsource lib="Device" part="Battery_Cell" description="Single-cell battery"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AF99C51</tstamp>
+    </comp>
+    <comp ref="MK1">
+      <value>via for coincidence sandwich</value>
+      <footprint>Wire_Pads:SolderWirePad_single_0-8mmDrill</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA0F85</tstamp>
+    </comp>
+    <comp ref="MK2">
+      <value>via for coincidence sandwich</value>
+      <footprint>Wire_Pads:SolderWirePad_single_0-8mmDrill</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA107D</tstamp>
+    </comp>
+    <comp ref="MK3">
+      <value>via for coincidence sandwich</value>
+      <footprint>Wire_Pads:SolderWirePad_single_0-8mmDrill</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA11AD</tstamp>
+    </comp>
+    <comp ref="MK4">
+      <value>via for coincidence sandwich</value>
+      <footprint>Wire_Pads:SolderWirePad_single_0-8mmDrill</footprint>
+      <libsource lib="Mechanical" part="MountingHole" description="Mounting Hole without connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA1235</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>10p</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">10pF THT</field>
+        <field name="FARNELL">1694175</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MC0805N100J101A2.54MM</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA5A4D</tstamp>
+    </comp>
+    <comp ref="C6">
+      <value>3n3</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/C_Disc_D3.0mm_W1.6mm_P2.50mm.wrl</field>
+        <field name="Description">3.3nF THT</field>
+        <field name="FARNELL">2901293</field>
+        <field name="MFG">Suntan</field>
+        <field name="MFG_PN">TS170R1H332KSBBA0R</field>
+        <field name="VALUE_B">10p</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA6D34</tstamp>
+    </comp>
+    <comp ref="D3">
+      <value>DNP</value>
+      <footprint>Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/BPW34F.wrl</field>
+        <field name="Description">silicon PIN photodiode&#xD;</field>
+        <field name="FARNELL">2981621</field>
+        <field name="MFG">Osram/Vishay</field>
+        <field name="MFG_PN">BPW34F/FA</field>
+        <field name="RS Online">654-7921</field>
+        <field name="VALUE_B">BPW34F</field>
+      </fields>
+      <libsource lib="Sensor_Optical" part="BPW34" description="Silicon PIN Photodiode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA9712</tstamp>
+    </comp>
+    <comp ref="D2">
+      <value>DNP</value>
+      <footprint>Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/BPW34F.wrl</field>
+        <field name="Description">silicon PIN photodiode&#xD;</field>
+        <field name="FARNELL">2981621</field>
+        <field name="MFG">Osram/Vishay</field>
+        <field name="MFG_PN">BPW34F/FA</field>
+        <field name="RS Online">654-7921</field>
+        <field name="VALUE_B">BPW34F</field>
+      </fields>
+      <libsource lib="Sensor_Optical" part="BPW34" description="Silicon PIN Photodiode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA9764</tstamp>
+    </comp>
+    <comp ref="D1">
+      <value>BPX61</value>
+      <footprint>Opto-Devices:PhotoDiode_DIL2_4.3x4.65_RM5.08</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/BPW34F.wrl</field>
+        <field name="Description">silicon PIN photodiode&#xD;</field>
+        <field name="FARNELL">2981621</field>
+        <field name="MFG">Osram/Vishay</field>
+        <field name="MFG_PN">BPW34F/FA</field>
+        <field name="RS Online">654-7921</field>
+        <field name="VALUE_B">BPW34F</field>
+      </fields>
+      <libsource lib="Sensor_Optical" part="BPW34" description="Silicon PIN Photodiode"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFA97B6</tstamp>
+    </comp>
+    <comp ref="SW1">
+      <value>-</value>
+      <fields>
+        <field name="Description">SPDT switch on-none-on</field>
+        <field name="FARNELL">9473416</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">1MS1T1B1M1QE </field>
+      </fields>
+      <libsource lib="Switch" part="SW_DPST_x2" description="Single Pole Single Throw (SPST) switch, separate symbol"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFAB544</tstamp>
+    </comp>
+    <comp ref="MK5">
+      <value>M3 support</value>
+      <footprint>Mounting_Holes:MountingHole_3.2mm_M3_ISO7380_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFD6430</tstamp>
+    </comp>
+    <comp ref="MK6">
+      <value>M3 support</value>
+      <footprint>Mounting_Holes:MountingHole_3.2mm_M3_ISO7380_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFD64D0</tstamp>
+    </comp>
+    <comp ref="MK7">
+      <value>M3 support</value>
+      <footprint>Mounting_Holes:MountingHole_3.2mm_M3_ISO7380_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5AFF1985</tstamp>
+    </comp>
+    <comp ref="R9">
+      <value>2k2</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <fields>
+        <field name="Description">2.2k 1% THT</field>
+        <field name="FARNELL">2401780</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF2201A50</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5B76C793</tstamp>
+    </comp>
+    <comp ref="R8">
+      <value>10k</value>
+      <footprint>Resistors_THT:R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal</footprint>
+      <fields>
+        <field name="3D_B">${KIPRJMOD}/3D/jumper_wire_P10.16mm.wrl</field>
+        <field name="Description">10k 1% THT</field>
+        <field name="FARNELL">2401780</field>
+        <field name="MFG">Multicomp</field>
+        <field name="MFG_PN">MCMF006FF1002A50</field>
+        <field name="VALUE_B">0</field>
+      </fields>
+      <libsource lib="Device" part="R" description="Resistor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D428EEE</tstamp>
+    </comp>
+    <comp ref="C9">
+      <value>6n8</value>
+      <footprint>Capacitors_THT:C_Disc_D3.0mm_W1.6mm_P2.50mm</footprint>
+      <fields>
+        <field name="Description">6.8nF THT</field>
+        <field name="FARNELL">2901297</field>
+        <field name="MFG">Suntan</field>
+        <field name="MFG_PN">TS170R1H682KSBBA0R</field>
+        <field name="VALUE_B">DNP</field>
+      </fields>
+      <libsource lib="Device" part="C" description="Unpolarized capacitor"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D42EFF7</tstamp>
+    </comp>
+    <comp ref="J1">
+      <value>Conn_01x02_Female</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D46E8CB</tstamp>
+    </comp>
+    <comp ref="J2">
+      <value>Conn_01x02_Female</value>
+      <footprint>Pin_Headers:Pin_Header_Straight_1x02_Pitch2.54mm</footprint>
+      <datasheet>~</datasheet>
+      <libsource lib="Connector" part="Conn_01x02_Female" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>5D483F0C</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x02_Female">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Female</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector" part="Conn_Coaxial">
+      <description>coaxial connector (BNC, SMA, SMB, SMC, Cinch/RCA, ...)</description>
+      <docs> ~</docs>
+      <footprints>
+        <fp>*BNC*</fp>
+        <fp>*SMA*</fp>
+        <fp>*SMB*</fp>
+        <fp>*SMC*</fp>
+        <fp>*Cinch*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_Coaxial</field>
+      </fields>
+      <pins>
+        <pin num="1" name="In" type="passive"/>
+        <pin num="2" name="Ext" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="DIY_detector-custom-parts" part="TL072">
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">TL072</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Out1" type="output"/>
+        <pin num="2" name="In1-" type="output"/>
+        <pin num="3" name="In1+" type="output"/>
+        <pin num="4" name="Gnd" type="output"/>
+        <pin num="5" name="In2+" type="output"/>
+        <pin num="6" name="In2-" type="output"/>
+        <pin num="7" name="Out2" type="output"/>
+        <pin num="8" name="Vcc" type="output"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="Battery_Cell">
+      <description>Single-cell battery</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">BT</field>
+        <field name="Value">Battery_Cell</field>
+      </fields>
+      <pins>
+        <pin num="1" name="+" type="passive"/>
+        <pin num="2" name="-" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="C">
+      <description>Unpolarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>C_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="CP">
+      <description>Polarized capacitor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>CP_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">CP</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Device" part="R">
+      <description>Resistor</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole">
+      <description>Mounting Hole without connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole</field>
+      </fields>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole_Pad">
+      <description>Mounting Hole with connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*Pad*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole_Pad</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="Sensor_Optical" part="BPW34">
+      <aliases>
+        <alias>BP104</alias>
+      </aliases>
+      <description>Silicon PIN Photodiode</description>
+      <docs>http://www.vishay.com/docs/81521/bpw34.pdf</docs>
+      <footprints>
+        <fp>Osram*DIL2*4.3x4.65mm*P5.08*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">D</field>
+        <field name="Value">BPW34</field>
+        <field name="Footprint">OptoDevice:Osram_DIL2_4.3x4.65mm_P5.08mm</field>
+      </fields>
+      <pins>
+        <pin num="1" name="K" type="passive"/>
+        <pin num="2" name="A" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Switch" part="SW_DPST_x2">
+      <description>Single Pole Single Throw (SPST) switch, separate symbol</description>
+      <docs>~</docs>
+      <fields>
+        <field name="Reference">SW</field>
+        <field name="Value">SW_DPST_x2</field>
+      </fields>
+      <pins>
+        <pin num="1" name="A" type="passive"/>
+        <pin num="2" name="B" type="passive"/>
+        <pin num="3" name="A" type="passive"/>
+        <pin num="4" name="B" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>/usr/share/kicad/library/Connector.lib</uri>
+    </library>
+    <library logical="DIY_detector-custom-parts">
+      <uri>/home/ozel/Documents/CERN/code/DIY_particle_detector/hardware/V1.2/DIY_detector-custom-parts.lib</uri>
+    </library>
+    <library logical="Device">
+      <uri>/usr/share/kicad/library/Device.lib</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>/usr/share/kicad/library/Mechanical.lib</uri>
+    </library>
+    <library logical="Sensor_Optical">
+      <uri>/usr/share/kicad/library/Sensor_Optical.lib</uri>
+    </library>
+    <library logical="Switch">
+      <uri>/usr/share/kicad/library/Switch.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="GND">
+      <node ref="C9" pin="2"/>
+      <node ref="R9" pin="2"/>
+      <node ref="J2" pin="2"/>
+      <node ref="J1" pin="2"/>
+      <node ref="MK6" pin="1"/>
+      <node ref="D4" pin="2"/>
+      <node ref="C8" pin="2"/>
+      <node ref="C7" pin="2"/>
+      <node ref="R7" pin="2"/>
+      <node ref="U1" pin="4"/>
+      <node ref="C3" pin="2"/>
+      <node ref="R2" pin="2"/>
+      <node ref="C5" pin="2"/>
+      <node ref="D3" pin="2"/>
+      <node ref="MK5" pin="1"/>
+      <node ref="MK7" pin="1"/>
+      <node ref="D2" pin="2"/>
+      <node ref="D1" pin="2"/>
+    </net>
+    <net code="2" name="Net-(C7-Pad1)">
+      <node ref="C7" pin="1"/>
+      <node ref="U1" pin="5"/>
+      <node ref="R6" pin="2"/>
+      <node ref="R7" pin="1"/>
+    </net>
+    <net code="3" name="Net-(C1-Pad1)">
+      <node ref="R3" pin="2"/>
+      <node ref="D3" pin="1"/>
+      <node ref="D4" pin="1"/>
+      <node ref="U1" pin="2"/>
+      <node ref="D1" pin="1"/>
+      <node ref="D2" pin="1"/>
+      <node ref="C1" pin="1"/>
+    </net>
+    <net code="4" name="Net-(SW1-Pad1)">
+      <node ref="SW1" pin="1"/>
+    </net>
+    <net code="5" name="Net-(J3-Pad2)">
+      <node ref="J3" pin="2"/>
+    </net>
+    <net code="6" name="Net-(BT1-Pad1)">
+      <node ref="SW1" pin="2"/>
+      <node ref="BT1" pin="1"/>
+    </net>
+    <net code="7" name="Net-(BT1-Pad2)">
+      <node ref="BT1" pin="2"/>
+    </net>
+    <net code="8" name="/Output">
+      <node ref="J2" pin="1"/>
+      <node ref="R9" pin="1"/>
+      <node ref="C10" pin="2"/>
+    </net>
+    <net code="9" name="Net-(J3-Pad1)">
+      <node ref="J3" pin="1"/>
+    </net>
+    <net code="10" name="Net-(C10-Pad1)">
+      <node ref="C10" pin="1"/>
+      <node ref="R8" pin="2"/>
+      <node ref="C9" pin="1"/>
+    </net>
+    <net code="11" name="Net-(C1-Pad2)">
+      <node ref="C1" pin="2"/>
+      <node ref="C2" pin="1"/>
+    </net>
+    <net code="12" name="+9V">
+      <node ref="R6" pin="1"/>
+      <node ref="R1" pin="1"/>
+      <node ref="J1" pin="1"/>
+      <node ref="C5" pin="1"/>
+      <node ref="U1" pin="8"/>
+      <node ref="C8" pin="1"/>
+    </net>
+    <net code="13" name="Net-(C2-Pad2)">
+      <node ref="C2" pin="2"/>
+      <node ref="R3" pin="1"/>
+      <node ref="U1" pin="1"/>
+      <node ref="C4" pin="1"/>
+    </net>
+    <net code="14" name="Net-(C6-Pad2)">
+      <node ref="C6" pin="2"/>
+      <node ref="R8" pin="1"/>
+      <node ref="U1" pin="7"/>
+      <node ref="R5" pin="1"/>
+    </net>
+    <net code="15" name="Net-(C6-Pad1)">
+      <node ref="R5" pin="2"/>
+      <node ref="U1" pin="6"/>
+      <node ref="R4" pin="1"/>
+      <node ref="C6" pin="1"/>
+    </net>
+    <net code="16" name="Net-(C4-Pad2)">
+      <node ref="C4" pin="2"/>
+      <node ref="R4" pin="2"/>
+    </net>
+    <net code="17" name="Net-(C3-Pad1)">
+      <node ref="U1" pin="3"/>
+      <node ref="C3" pin="1"/>
+      <node ref="R1" pin="2"/>
+      <node ref="R2" pin="1"/>
+    </net>
+  </nets>
+</export>
