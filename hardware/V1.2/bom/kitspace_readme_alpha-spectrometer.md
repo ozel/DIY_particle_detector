@@ -6,7 +6,7 @@ It's an educational tool and citizen science device made for exploring natural a
 
 [Parts overview and assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf)
 
-The other [electron-detector variant](/DIY%20Electron%20Detector/) of this project is easier to operate but cannot measure alpha particles.
+The other [electron-detector variant](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20electron%20detector/) of this project is easier to operate but cannot measure alpha particles.
 Both versions of the DIY Particle Detector are using the same circuit board with different sets of components.
 
 Please refer to the [main project description](https://github.com/ozel/DIY_particle_detector/) for further details.
