@@ -1,13 +1,11 @@
 multi:
   DIY Alpha Spectrometer:
     summary: A low-cost particle detector for measuring radioactivity.
-    site: https://github.com/ozel/DIY_particle_detector
     bom: hardware/V1.2/bom/1-click-bom_alpha-spectrometer.csv
     gerbers: hardware/V1.2/gerbers
     readme: hardware/V1.2/bom/kitspace_readme_alpha-spectrometer.md
   DIY Electron Detector:
     summary: A low-cost particle detector for measuring radioactivity.
-    site: https://github.com/ozel/DIY_particle_detector
     bom: hardware/V1.2/bom/1-click-bom_electron-detector.csv
     gerbers: hardware/V1.2/gerbers
     readme: hardware/V1.2/bom/kitspace_readme_electron-detector.md
