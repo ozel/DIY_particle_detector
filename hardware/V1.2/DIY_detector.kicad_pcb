@@ -28,8 +28,8 @@
     (35 F.Paste user hide)
     (36 B.SilkS user)
     (37 F.SilkS user)
-    (38 B.Mask user hide)
-    (39 F.Mask user hide)
+    (38 B.Mask user)
+    (39 F.Mask user)
     (40 Dwgs.User user)
     (41 Cmts.User user hide)
     (42 Eco1.User user hide)
@@ -1669,7 +1669,7 @@
       (net 4 GND))
     (pad 1 thru_hole rect (at 0 0 90) (size 1.7 1.7) (drill 0.8) (layers *.Cu *.Mask)
       (net 1 "Net-(C1-Pad1)"))
-    (model ${KIPRJMOD}/3D/BPX61.wrl
+    (model ${KIPRJMOD}/3D/BPX61_withoutWindow.wrl
       (at (xyz 0 0 0))
       (scale (xyz 1 1 1))
       (rotate (xyz 0 0 0))
@@ -2088,7 +2088,7 @@
   (gr_line (start 107.4 102.9) (end 110 102.9) (layer Edge.Cuts) (width 0.15) (tstamp 5AF98D9D))
   (gr_line (start 105.8 120.5) (end 107.4 122.1) (layer Edge.Cuts) (width 0.15))
   (gr_line (start 101.5 120.5) (end 105.8 120.5) (layer Edge.Cuts) (width 0.15) (tstamp 5AFD6CB7))
-  (gr_circle (center 120.99 116.31) (end 121.371 116.437) (layer B.SilkS) (width 1))
+  (gr_circle (center 120.99 116.31) (end 121.391609 116.31) (layer B.SilkS) (width 0.8))
   (gr_text "Notes:\n- PCB designed for these enclosures:\nhttp://uk.farnell.com/multicomp/g102mf/box-diecast-90x36x30mm/dp/1902552\nhttp://uk.farnell.com/deltron-enclosures/480-0010/box-diecast-ip68/dp/1774842\nouter case dimensions: ca. 30 x 35 x 89 mm\ncase edges touching the lid must be blank/metal and _not_coated_ with paint for better conductivity\n- U1 must be mounted on backside, _without_ PDIP socket   \n- 4 THT mounting holes/vias around diodes for optional sandwich mount of two PCBs \n- 2 more M3 holes for optional support (e.g. socket screws)" (at 98.2 140.1) (layer Dwgs.User) (tstamp 5D428BE0)
     (effects (font (size 1.5 1.5) (thickness 0.3)) (justify left))
   )
