@@ -83,7 +83,7 @@ If a hardware oscilloscope is not at hand, a **simple software oscilloscope** wi
 https://github.com/ozel/WaveWatch/
 To run this program written in Processing, download Version 3 from www.processing.org and install the missing ‘Minim’ library via the ‘Sketch’ menu / ‘Import Library...’ / ‘Add Library...’.
 Download my version of the WaveWatch Processing sketch from https://github.com/ozel/WaveWatch/archive/master.zip, unzip and open the file WaveWatch-master/WaveWatch/WaveWatch.pde in Processing.
-For more sophisticated processing of the particle signals from radioactive objects like recording their energy spectrum please refer to the [software](#sofware) section below.
+For more sophisticated processing of the particle signals from radioactive objects like recording their energy spectrum please refer to the [software](#software) section below.
 
 ### DIY Detector Building Workshops
 
