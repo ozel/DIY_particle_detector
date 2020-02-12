@@ -67,6 +67,24 @@ Care must be taken in order to keep the bond wire in place when the glass window
 * The connection cable should use a 3-pin 3.5 mm mini-jack connector since these sound interfaces supply a bias voltage on the ring/center tap of the microphone input which must be circumvented/avoided. 
   For further details please refer to the schematics.
 
+### Detector Signals of Radioactivity on an Oscilloscope 
+The screenshots below show typical output signals from both detector variants with arrows highlighting the signal and noise properties. The blue lines represent signals from individual particles, the grey lines are superpositions of earlier particle signals which triggered the oscilloscope as well. For better comparison, a beta & gamma radiation source (potassium salt, KCL) was used in both cases which does not emit alpha particles. The negative pulse with its steep downward edge is the main signal and is larger than the electronic noise. The trigger level must be set well below the noise range, which depends on the intensity of surrounding *electromagnetic interference* (EMI) radiation and stray light reaching into the shielding case of the detector. The short negative main signal pulse is followed by a wider positive overshoot which is proportional in size to the amplitude of the main signal. The overshoot is an effect of the amplifier circuit and also depends on the impedance matching from the detector output to the input of the measurement device. The employed oscilloscope features a default input impedance of 1 megaohm. Microphone and line-in inputs of sound cards (as described above) have considerably lower input impedances and pulse measurements will therefore show a larger signal overshoot. The alpha-spectrometer circuit was intentionally designed to produce this kind of a bi-polar signal with a lot of overshoot in order to mimic actual audio waves.
+
+* ***Electron-Detector***
+  ![](images/oscilloscope_pulse_electron-detector.png)
+  Main signal amplitudes can be typically well distinguished from electronic noise at about -50 mV (and lower) if the detector is well shielded against light and with low EMI (e.g. no cell phone or electro motor close by). The negative pulses are about 50 to 75 us wide with this circuit.
+  
+
+* ***Alpha-Spectrometer***
+  ![](images/oscilloscope_pulse_alpha-spectro.png)
+  Typical signal amplitudes of particles from the same beta/gamma radiation source are much lower compared to the electron-detector varaint. The electronic noise is much smaller as well and the width of pulses is between 1 and 2 ms. This circuit is optimised for large pulses from alpha particles which is heavy-ionizing radiation and therefore produces a lot more free charges in the sensor. The amplitude threshold which allows to distinguish between electrons (=smaller signal amplitude) and alpha particles (=larger signal amplitude) is at -8 mV in case of a typical oscilloscope with an input impedance of 1 megaohm. This threshold is lower in case of a sound card due to their lower input impedances. Please refer to [the scientific article](https://doi.org/10.3390/s19194264) for detailed information about the energy calibration in this case. 
+  
+If a hardware oscilloscope is not at hand, a **simple software oscilloscope** with good trigger funtionallity for sound cards and audio inputs of computers can be found here:
+https://github.com/ozel/WaveWatch/
+To run this program written in Processing, download Version 3 from www.processing.org and install the missing ‘Minim’ library via the ‘Sketch’ menu / ‘Import Library...’ / ‘Add Library...’.
+Download my version of the WaveWatch Processing sketch from https://github.com/ozel/WaveWatch/archive/master.zip, unzip and open the file WaveWatch-master/WaveWatch/WaveWatch.pde in Processing.
+For more sophisticated processing of the particle signals from radioactive objects like recording their energy spectrum please refer to the [software](#software) section below.
+
 ### DIY Detector Building Workshops
 
 These particle detectors have been built by high school students (age 16 - 18) and citizen science enthusiasts (age ~20 - 60) during several workshops.
