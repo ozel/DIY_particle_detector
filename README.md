@@ -3,6 +3,9 @@
 *Repository archive on Zenodo:* [![DOI](https://img.shields.io/badge/doi-10.5281/zenodo.3361755-blue.svg?style=flat&labelColor=grey)](https://doi.org/10.5281/zenodo.3361755)
 
 # DIY Particle Detector
+
+**Short summary video on twitter** :point_right: https://twitter.com/CERN/status/1260600298206302210
+
 A mobile low-cost spectrometer for measuring ionising radiation like alpha particles and electrons (energy range: 33 keV to 8 MeV).
 It's an educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, old Radium watches etc.).
 
