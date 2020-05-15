@@ -11,31 +11,40 @@
 :point_right: https://twitter.com/CERN/status/1260600298206302210
 
 A mobile low-cost spectrometer for measuring ionising radiation like alpha particles and electrons (energy range: 33 keV to 8 MeV).
-It's an educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, old Radium watches etc.).
+It's an educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, ceramics, old Radium watches etc.).
 
-## Working Principle
+## How does it work?
 Tiny amounts of electrical charge are generated in repurposed photodiodes by impinging particles. The charges form currents which are amplified and converted into voltage pulses that are compatible with audio/microphone signal inputs.
 The size of the pulse is proportional to the energy deposited by the ionising radiation. A reference calibration with sources of known energy spectra is provided.
 
-<img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/pulse_rain.png" width="350">
+<img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/pulse_rain.png" width="300">
 
-A superposition of several recorded pulse waveforms from electrons of beta decays (KCl salt sample, more info below):
+A superposition of several recorded pulse waveforms from electrons of beta decays (KCl salt sample, more info below) is shown on the right. This is the raw analog ouput signal of the detector.
 
 Black lines in the upper area represent electronic noise, detected signal pulses from the natural radioactivity of potassium (isotope K-40) are highlighted in red.
 
+<br>
 
-<img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Alpha_spectrum_Majolika_ceramic.png" width="400">
+<br>
 
-The energy spectrum on the right (derived from the size of signal pulses) was taken from an old ceramics pendant of the Majolika manufacture (Karlsruhe/Germany) - without vacuum pump, in normal ambient air! 
+<br>
+
+<img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Alpha_spectrum_Majolika_ceramic.png" width="300">
+
+The energy spectrum on the right - derived from the size of signal pulses - was taken from an old ceramics pendant of the Majolika manufacture (Karlsruhe/Germany) - without vacuum pump, in normal ambient air! 
 
 The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More detais on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
+
+<br>
+
+<br>
 
 ## Hardware
 
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="350"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="350">
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_open.jpg" height="313"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_closed.jpg" height="313">
 
-The open hardware design files are relased under the CERN OHL licence version 1.2.
+The open hardware design files are relased under the CERN Open Hardware Licence.
 ### Detector Variants
 The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) contains remarks for using the same circuit board with two partially different sets of components (assembly variants):
 
