@@ -15,9 +15,15 @@ The size of the pulse is proportional to the energy deposited by the ionising ra
 
 A superposition of several recorded pulse waveforms from electrons of beta decays (KCl salt sample, more info below):
 
-![some pulse rain](images/pulse_rain.png "output signals of the detector")
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/pulse_rain.png" width="400">
 
 Black lines in the upper area represent electronic noise, detected signal pulses from the natural radioactivity of potassium (isotope K-40) are highlighted in red.
+
+The energy spectrum below (based on the size of signal pusles) was taken from an old ceramics pendant of the Majolika manufacture (Karlsruhe/Germany) - without vacuum pump, in normal ambient air! 
+
+<img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Alpha_spectrum_Majolika_ceramic.png" width="500">
+
+The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More detais on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
 
 ## Hardware
 
