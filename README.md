@@ -80,10 +80,14 @@ Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 wi
 
 <img align="left" src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
 
-Mircoscope image of the Osram BPX61 diode on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the silicon chip (this side is also marked with a notch in the metal case, lower right corner). For detecting alpha particles, the glass window of this diode must be removed, details in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
+Mircoscope image of the Osram BPX61 diode on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the silicon chip (this side is also marked with a notch in the metal case, lower right corner). For detecting alpha particles, the glass window of this diode must be removed.    
+Further informations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
 
 <br>
 
+<br><br>
+
+<br><br>
 
 ### General Requirements
 
