@@ -95,10 +95,10 @@ Further informations in the [wiki](https://github.com/ozel/DIY_particle_detector
   See pictures above and the [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) for part numbers of specific aluminium cases that fit exactly to the shape of the circuit board.
 * 9 V battery. NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise, always use batteries if building the detector for the first time!)
 * Signal output is in the range of +/- 0.1 V and compatible with an audio/microphone input such as a headset connector of a mobile phone or laptop (or an oscilloscope if available)
-* The alpha-spectrometer should be operated using a low-cost USB soundcard for best results, see the (wiki)[https://github.com/ozel/DIY_particle_detector/wiki/Soundcards].
-* The connection cable should be shielded and not too long, recommendations in the (wiki)[https://github.com/ozel/DIY_particle_detector/wiki/Cables]. 
+* The alpha-spectrometer should be operated using a low-cost USB soundcard for best results, see the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards).
+* The connection cable should be shielded and not too long, recommendations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Cables). 
 * Several reference measurements are provided in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). 
-  All have been recorded using the (blue CM108 USB soundcard)[https://github.com/ozel/DIY_particle_detector/wiki/Soundcards], sampling the input signal @ 48 kHz and 16-bit resolution.
+  All have been recorded using the [blue CM108 USB soundcard](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards), sampling the input signal @ 48 kHz and 16-bit resolution.
 
 
 ### Detector Signals of Radioactivity on an Oscilloscope 
