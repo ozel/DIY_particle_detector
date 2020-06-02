@@ -78,9 +78,11 @@ The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/maste
 
 Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used with ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their general efficiency for detecting gamma photons is quite low.  
 
-Mircoscope image of Osram BPX61 diode below on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). For detecting alpha particles, the glass window of this diode mus be removed, details in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
+<img align="left" src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
 
-<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
+Mircoscope image of the Osram BPX61 diode on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the silicon chip (this side is also marked with a notch in the metal case, lower right corner). For detecting alpha particles, the glass window of this diode must be removed, details in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
+
+<br>
 
 
 ### General Requirements
