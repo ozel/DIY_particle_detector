@@ -62,7 +62,7 @@ The characteristic alpha energies of the uranium isotopes are about 1 MeV lower 
 
 More photos of finished builds from users around the world can be found in the [picture gallery](https://github.com/ozel/DIY_particle_detector/wiki/Gallery).     
 The open hardware design in this repository is relased under the terms of the CERN Open Hardware Licence V1.2.
-Usage guidelines and legal requirements for users of his license can be found [here](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-1.2).
+Usage guidelines and legal requirements for users of this license can be found [here](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-1.2).
 ### Detector Variants
 The same circuit board is used with two partially different sets of components in two assembly variants.
 For electronic beginners, starting with the electron-detector version is *highly recommended* over the alpha-spectrometer.
@@ -72,7 +72,7 @@ For electronic beginners, starting with the electron-detector version is *highly
   After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (see close-up pictures in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes#preparation-of-the-bpx61-diode-for-alpha-spectroscopy). 
   The circuit works most precise with only one BPX61 diode (lowest electronic noise) and was specificaly tuned for this scenario.
   * [get alpha-spectrometer parts & circuit board via kitspace](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20alpha%20spectrometer/)
-  * [short parts overview & assembly guide for the alpha-spectrometer](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf)
+  * [short parts overview & assembly guide for the alpha-spectrometer](https://raw.githubusercontent.com/ozel/DIY_particle_detector/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf)
   * [detailed assembly instructions and list of required tools](https://github.com/ozel/DIY_particle_detector/wiki/Assembly-Instructions)
   * [scientific article incl. reference energy calibration with alpha sources](https://doi.org/10.3390/s19194264)
 
@@ -82,7 +82,7 @@ For electronic beginners, starting with the electron-detector version is *highly
   <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top_electron.png" height="200"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom_electron.png" height="200"><br/>
   This variant is not able to detect alpha particles but is  easier to operate (less sensitive to visible light and electromagnetic interference, see section on general requirements below). It is also more sensitive towards sources of low intensity (low rate of radioactive decays) since it has four times the sensor volume compared to using only one diode as sensor. This version is ideal for beginners, in total only 8 components are different compared to the alpha-spectrometer variant above. This variant is similar to the previous circuit version 1.1.
   * [get electron-detector parts & circuit board via kitspace](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20electron%20detector/)
-  * [short parts overview & assembly guide for the electron-detector](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20electron%20version.pdf) 
+  * [short parts overview & assembly guide for the electron-detector](https://raw.githubusercontent.com/ozel/DIY_particle_detector/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20electron%20version.pdf) 
   * [detailed assembly instructions and list of required tools](https://github.com/ozel/DIY_particle_detector/wiki/Assembly-Instructions)
 
 
