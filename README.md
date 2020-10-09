@@ -1,27 +1,61 @@
+<img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Alpha-spectrometer_with_ceramics_in_chocolate_box.jpeg" width="400">
+
 *Corresponding scientific article:* [![DOI](https://img.shields.io/badge/doi-10.3390/s19194264-blue.svg?style=flat&labelColor=grey)](https://doi.org/10.3390/s19194264)
 
 *Repository archive on Zenodo:* [![DOI](https://img.shields.io/badge/doi-10.5281/zenodo.3361755-blue.svg?style=flat&labelColor=grey)](https://doi.org/10.5281/zenodo.3361755)
 
-# DIY Particle Detector
-A mobile low-cost spectrometer for measuring ionising radiation like alpha particles and electrons (energy range: 33 keV to 8 MeV).
-It's an educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, old Radium watches etc.).
 
-## Working Principle
+# DIY Particle Detector
+
+**Short summary video on twitter**<br>
+:point_right: https://twitter.com/CERN/status/1260600298206302210
+
+A mobile low-cost spectrometer for measuring ionising radiation like alpha particles and electrons (energy range: 33 keV to 8 MeV).   
+It's an experimental educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, ceramics, old Radium watches etc.).
+
+Overview:
+* [How does it work?](#how-does-it-work)
+* [Hardware](#hardware)
+    * [Two variants](#detector-variants): Electron-Detector (easier, lower costs) and Alpha-Spectrometer (more advanced)
+    * [General requirements](#general-requirements)
+    * [Detector signals](#detector-signals-of-radioactivity-on-an-oscilloscope)
+* [Software](#software) for recording and analysing measurements
+    * [Data anlysis](#data-analysis)
+* [Reference measurements and plots](#reference-measurements-and-plots)
+* [Workshops](#workshops) with high-school students, teachers and makers
+
+## How does it work?
 Tiny amounts of electrical charge are generated in repurposed photodiodes by impinging particles. The charges form currents which are amplified and converted into voltage pulses that are compatible with audio/microphone signal inputs.
 The size of the pulse is proportional to the energy deposited by the ionising radiation. A reference calibration with sources of known energy spectra is provided.
 
-A superposition of several recorded pulse waveforms from electrons of beta decays (KCl salt sample, more info below):
+<br><br><img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/pulse_rain.png" width="300">
 
-![some pulse rain](images/pulse_rain.png "output signals of the detector")
+A superposition of several recorded pulse waveforms from electrons of beta decays (KCl salt sample, more info below) is shown on the right. This is the raw analog ouput signal of the detector.
 
 Black lines in the upper area represent electronic noise, detected signal pulses from the natural radioactivity of potassium (isotope K-40) are highlighted in red.
+
+<br>
+
+<br>
+
+<br>
+
+<img align="right" src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Alpha_spectrum_Majolika_ceramic.png" width="300">
+
+The energy spectrum on the right - derived from the size of signal pulses - was taken from an old ceramics pendant of the Majolika manufacture (Karlsruhe/Germany) - without vacuum pump, in normal ambient air! 
+
+The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More detais on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
+
+<br>
+
+<br>
 
 ## Hardware
 
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="350"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="350">
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_open.jpg" height="313"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_closed.jpg" height="313">
 
-The open hardware design files are relased under the CERN OHL licence version 1.2.
+The open hardware design files are relased under the CERN Open Hardware Licence.
 ### Detector Variants
 The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) contains remarks for using the same circuit board with two partially different sets of components (assembly variants):
 
@@ -42,30 +76,30 @@ The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/maste
   * [parts overview & assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20electron%20version.pdf) 
 
 
-Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used for ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their general efficiency for detecting gamma photons is quite low.  
+Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used with ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their general efficiency for detecting gamma photons is quite low.  
 
-Mircoscope image of Osram BPX61 diode below on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the chip (this side is also marked with a notch in the metal case, lower right corner). 
-Care must be taken in order to keep the bond wire in place when the glass window is removed: The right picture shows the mounted BPX61 diode after its glass windows was removed by cutting small dents into the border of the TO metal case with small pliers to crack the glass.
+<img align="left" src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
 
-<img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BPX61_onboard.jpg" height="300">
+Mircoscope image of the Osram BPX61 diode on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the silicon chip (this side is also marked with a notch in the metal case, lower right corner). For detecting alpha particles, the glass window of this diode must be removed.    
+Further informations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
 
+<br>
+
+<br><br>
+
+<br><br>
 
 ### General Requirements
 
 * An absolutely light-tight and electromagnetically shielding metal case is mandatory. Either a commercial one made of die casted aluminium (thick metal provides better immunity towards vibrations and prevents "microphonic effects") or an upcycled tin box for candies. 
-  See pictures above and the schematics for corresponding part numbers of specific aluminium cases that fit.
-* 9 V battery. NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise, always use batteries)
-* Signal output is in the range of +/- 1 V and compatible with an audio/microphone input such as a headset connector of a mobile phone or laptop (or an oscilloscope if available)
-* <img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/low-cost_usb_audio_interfaces.jpg" width="300">
-
-  For higher precision and better reproducability of measurements, a small USB soundcard (< 10 EUR) is recommended:
-  The ICY-BOX IB-AC527 on the left and the K&ouml;nig Electronic CMP-SOUNDUSB12 on the right ("3D Sound Controller 5.1") use both a chip series from C-Media Electronics Inc: 
-  [CM108](https://www.cmedia.com.tw/products/USB20_FULL_SPEED/CM108AH).
-  It's well specified with a flat frequency response in the required 1-5 kHz range and good signal to noise ratio. As standard USB Audio Class devices, no dirvers are required and they are recognised as regular audio input device in many operating systems, including Android & iOS.
+  See pictures above and the [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) for part numbers of specific aluminium cases that fit exactly to the shape of the circuit board.
+* 9 V battery. NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise, always use batteries if building the detector for the first time!)
+* Signal output is in the range of +/- 0.1 V and compatible with an audio/microphone input such as a headset connector of a mobile phone or laptop (or an oscilloscope if available)
+* The alpha-spectrometer should be operated using a low-cost USB soundcard for best results, see the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards).
+* The connection cable should be shielded and not too long, recommendations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Cables). 
 * Several reference measurements are provided in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). 
-  All have been recorded using the blue CM108 USB soundcard from König, sampling the input signal (yellow connector) @ 48 kHz and 16 bit resolution.
-* The connection cable should use a 3-pin 3.5 mm mini-jack connector since these sound interfaces supply a bias voltage on the ring/center tap of the microphone input which must be circumvented/avoided. 
-  For further details please refer to the schematics.
+  All have been recorded using the [blue CM108 USB soundcard](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards), sampling the input signal @ 48 kHz and 16-bit resolution.
+
 
 ### Detector Signals of Radioactivity on an Oscilloscope 
 The screenshots below show typical output signals from both detector variants with arrows highlighting the signal and noise properties. The blue lines represent signals from individual particles, the grey lines are superpositions of earlier particle signals which triggered the oscilloscope as well. For better comparison, a beta & gamma radiation source (potassium salt, KCL) was used in both cases which does not emit alpha particles. The negative pulse with its steep downward edge is the main signal and is larger than the electronic noise. The trigger level must be set well below the noise range, which depends on the intensity of surrounding *electromagnetic interference* (EMI) radiation and stray light reaching into the shielding case of the detector. The short negative main signal pulse is followed by a wider positive overshoot which is proportional in size to the amplitude of the main signal. The overshoot is an effect of the amplifier circuit and also depends on the impedance matching from the detector output to the input of the measurement device. The employed oscilloscope features a default input impedance of 1 megaohm. Microphone and line-in inputs of sound cards (as described above) have considerably lower input impedances and pulse measurements will therefore show a larger signal overshoot. The alpha-spectrometer circuit was intentionally designed to produce this kind of a bi-polar signal with a lot of overshoot in order to mimic actual audio waves.
@@ -85,15 +119,6 @@ To run this program written in Processing, download Version 3 from www.processin
 Download my version of the WaveWatch Processing sketch from https://github.com/ozel/WaveWatch/archive/master.zip, unzip and open the file WaveWatch-master/WaveWatch/WaveWatch.pde in Processing.
 For more sophisticated processing of the particle signals from radioactive objects like recording their energy spectrum please refer to the [software](#software) section below.
 
-### DIY Detector Building Workshops
-
-These particle detectors have been built by high school students (age 16 - 18) and citizen science enthusiasts (age ~20 - 60) during several workshops.
-After a little introduction into the soldering of electronic components, the whole device can be built in less than two hours - including the modification of a candy tin box as its case.
-
-* [S'Cool LAB Summer Camp 2017](https://indico.cern.ch/event/570855/timetable/) at CERN, [poster presentation](https://indico.cern.ch/event/570855/contributions/2616929/attachments/1504724/2344411/RG3_DIY_Detector.pdf)
-* [Student Summer School of Barcelona Technoweek 2017](http://icc.ub.edu/congress/TechnoWeek2018/outreach_EN.php), [CERN news](https://home.cern/news/news/knowledge-sharing/summer-school-secondary-students-spain)
-* [S'Cool LAB Summer Camp 2018](https://indico.cern.ch/event/726779/timetable/) at CERN, [poster presentation, page 3](https://indico.cern.ch/event/726779/contributions/2991390/attachments/1697186/2732121/pdfjoiner.pdf)
-* [Gathering of Open Science Hardware 2018 in Shenzhen China](http://openhardware.science/gatherings/gosh-2018-2/), [workshop documentation](https://forum.openhardware.science/t/day-3-build-your-own-particle-detector-discover-natural-radioactivity/1468)
 
 ## Software
 The software in this repository is provided under the open source BSD Licence.
@@ -129,23 +154,17 @@ Overview on reference measurements:
 * a small columbite stone (containing trace amounts of uranium ore), a combined source of electrons and alphas (and gamma photons which do not interact enough within the thin diode detector to be relevant)
 * a watch hand from an old watch that was painted with luminescent radium paint. Featuring Ra-226 and all it's radioactive progeny isotopes
 
-## Pixel Detector
+## Workshops
 
-For comparsion, two measurements have been made with the [iPadPix](https://github.com/ozel/iPadPix) mobile device that is based on the 1.4 x 1.4 cm^2 hybrid pixel detector Timepix. It's silicon sensor chip area is 28 times larger and the sensitive volume is about 6 times bigger (300 um vs. 50 um) than a single BPW34 or BPX61 diode.
-Due to it's larger area, it is well suited for measuring less concentrated sources of radioactivity such as airborne radon progeny collected with an electrostatically charged party balloon.
-The diode-based detector can be regarded as a functional model for one pixel of pixel detectors. The physics behind signal formation and subsequent signal processing methods which amplify, characterise and digitise the pulses are the same.
-For further details please consult the scripts provided in [data_analysis_and_reference_measurements/pixel_detector](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/pixel_detector) and refer to the [corresponding article](https://doi.org/10.3390/s19194264).
+These DIY particle detectors have been built by high school students (age 16 - 18), teachers, makers, and citizen science enthusiasts (age ~20 - 60) during several workshops.
+After a little introduction into the soldering of electronic components, the whole device can be built in less than two hours - including the modification of a candy tin box as its case.
 
-## Diode Characterisation
+* [S'Cool LAB Summer Camp 2017](https://indico.cern.ch/event/570855/timetable/) at CERN, [poster presentation](https://indico.cern.ch/event/570855/contributions/2616929/attachments/1504724/2344411/RG3_DIY_Detector.pdf)
+* [Student Summer School of Barcelona Technoweek 2017](http://icc.ub.edu/congress/TechnoWeek2018/outreach_EN.php), [CERN news](https://home.cern/news/news/knowledge-sharing/summer-school-secondary-students-spain)
+* [S'Cool LAB Summer Camp 2018](https://indico.cern.ch/event/726779/timetable/) at CERN, [poster presentation, page 3](https://indico.cern.ch/event/726779/contributions/2991390/attachments/1697186/2732121/pdfjoiner.pdf)
+* [Gathering of Open Science Hardware 2018 in Shenzhen China](http://openhardware.science/gatherings/gosh-2018-2/), [workshop documentation](https://forum.openhardware.science/t/day-3-build-your-own-particle-detector-discover-natural-radioactivity/1468)
 
-C-V curves of several diodes of the BPW34 series and BXP61 type have been taken to characterise the thickness of the sensitive layer under reverse bias conditions.
-With about 8 V on the cathode, the typical sensitive layer thickness is about 50 um which corresponds well with the recorded energy spectra. 
-Based on the C-V curves, the following doping profiles are derived:
+---
 
-<img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/Neff_10diodes_HR.png" width="550">
+The [Pixel Detector](https://github.com/ozel/DIY_particle_detector/wiki/Pixel-Detectors) and [Diode Characterisation](https://github.com/ozel/DIY_particle_detector/wiki/Diode-Characterisation) sections have been moved to the [wiki](https://github.com/ozel/DIY_particle_detector/wiki) of this project. Both are related to the [scientific article](https://www.mdpi.com/1424-8220/19/19/4264/htm) and represent supplementary material.
 
-The effective charge carrier concentration 'Neff' is on average about half of the value reported in 2008 by [Ravotti et al.](http://cds.cern.ch/record/1169276/files/04636908.pdf) which can be explained by manufacturing process variations. The similarity of the curve shapes confirms that the investigated diodes use either the same or at least very similar silicon chips. The regular micropattern visible in the doping profile curves is a measurement artefact which is caused by internal rounding errors of the C-V measurement device. The thin double lines indicate the error range of the instrument as stated by its manufacturer (Keysight B1500A with the MFCMU module). 
-
-Further discussion of the CV measurements can be found in [corresponding article](https://doi.org/10.3390/s19194264).
-The folder [data_analysis_and_reference_measurements/diode_detector/diode_characterisation_and_simulation_plots](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/diode_characterisation_and_simulation_plots) provides the scripts to reproduce the corresponding plots.
-The raw C-V measurement data is available in [data_analysis_and_reference_measurements/diode_detector/data/high_resolution_CV](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data/high_resolution_CV).
