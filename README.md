@@ -13,16 +13,21 @@
 A mobile low-cost spectrometer for measuring ionising radiation like alpha particles and electrons (energy range: 33 keV to 8 MeV).   
 It's an experimental educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, ceramics, old Radium watches etc.).
 
+*The main project documentation has been moved to the **[Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*     
+A summary of the main aspects can be found below.    
+The hardware design is licenced using the [CERN Open Hardware License](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/CERN_OPEN_HARDWARE_LICENSE_OHL_v_1_2.txt) and the open source software is provided under the terms of the [BSD licence](https://github.com/ozel/DIY_particle_detector/blob/master/LICENSE).
+
 Overview:
 * [How does it work?](#how-does-it-work)
 * [Hardware](#hardware)
     * [Two variants](#detector-variants): Electron-Detector (easier, lower costs) and Alpha-Spectrometer (more advanced)
     * [General requirements](#general-requirements)
-    * [Detector signals](#detector-signals-of-radioactivity-on-an-oscilloscope)
+    * [Detector signals](#detector-signals)
 * [Software](#software) for recording and analysing measurements
-    * [Data anlysis](#data-analysis)
 * [Reference measurements and plots](#reference-measurements-and-plots)
 * [Workshops](#workshops) with high-school students, teachers and makers
+
+*More info in the **[Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*     
 
 ## How does it work?
 Tiny amounts of electrical charge are generated in repurposed photodiodes by impinging particles. The charges form currents which are amplified and converted into voltage pulses that are compatible with audio/microphone signal inputs.
@@ -55,33 +60,38 @@ The characteristic alpha energies of the uranium isotopes are about 1 MeV lower 
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_candy-tin-box.jpg" height="350"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.1/documentation/DIY_Particle_Detector_in_cast-aluminium-case.jpg" height="350">
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_open.jpg" height="313"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_closed.jpg" height="313">
 
-The open hardware design files are relased under the CERN Open Hardware Licence.
+More photos of finished builds from users around the world can be found in the [picture gallery](https://github.com/ozel/DIY_particle_detector/wiki/Gallery).     
+The open hardware design in this repository is relased under the terms of the CERN Open Hardware Licence V1.2.
+Usage guidelines and legal requirements for users of his license can be found [here](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-1.2).
 ### Detector Variants
-The [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) contains remarks for using the same circuit board with two partially different sets of components (assembly variants):
+The same circuit board is used with two partially different sets of components in two assembly variants.
+For electronic beginners, starting with the electron-detector version is *highly recommended* over the alpha-spectrometer.
 
 * ***Alpha-spectrometer*** measuring energies of alpha particles and electrons using one BPX61 diode.<br/>
   <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top_alpha.png" height="200"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom_alpha.png" height="200"><br/>
-  After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (see close-up pictures below). 
+  After the glass window of the diode is carefully broken-up and removed, it can sense alpha particles (see close-up pictures in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes#preparation-of-the-bpx61-diode-for-alpha-spectroscopy). 
   The circuit works most precise with only one BPX61 diode (lowest electronic noise) and was specificaly tuned for this scenario.
-  * [get parts & circuit board via kitspace](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20alpha%20spectrometer/)
-  * [parts overview & assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf)
-  * [scientific article incl. reference energy calibration](https://doi.org/10.3390/s19194264)
+  * [get alpha-spectrometer parts & circuit board via kitspace](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20alpha%20spectrometer/)
+  * [short parts overview & assembly guide for the alpha-spectrometer](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20alphaspectrometer%20version.pdf)
+  * [detailed assembly instructions and list of required tools](https://github.com/ozel/DIY_particle_detector/wiki/Assembly-Instructions)
+  * [scientific article incl. reference energy calibration with alpha sources](https://doi.org/10.3390/s19194264)
 
 
 
 * ***Electron/beta radiation detector*** measuring mostly electrons (plus few gamma photons) with four very low-cost BPW34F or BPW34FA diodes (<1 EUR each).<br/>
   <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_top_electron.png" height="200"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/3D_bottom_electron.png" height="200"><br/>
-  This variant is not able to detect alpha particles but is  easier to operate (less sensitive to visible light and electromagnetic interference, see section on general requirements below). It is also more sensitive towards sources of low intensity (low rate of radioactive decays) since it has four times the sensor volume compared to using only one diode as sensor. This version is ideal for beginners, in total only 8 components are different compared to the alpha-spectrometer variant above. This assembly variant is similar to the [previous circuit version 1.1](https://github.com/ozel/DIY_particle_detector/tree/master/hardware/V1.1).
-  * [get parts & circuit board via kitspace](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20electron%20detector/)
-  * [parts overview & assembly guide](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20electron%20version.pdf) 
+  This variant is not able to detect alpha particles but is  easier to operate (less sensitive to visible light and electromagnetic interference, see section on general requirements below). It is also more sensitive towards sources of low intensity (low rate of radioactive decays) since it has four times the sensor volume compared to using only one diode as sensor. This version is ideal for beginners, in total only 8 components are different compared to the alpha-spectrometer variant above. This variant is similar to the previous circuit version 1.1.
+  * [get electron-detector parts & circuit board via kitspace](https://kitspace.org/boards/github.com/ozel/diy_particle_detector/diy%20electron%20detector/)
+  * [short parts overview & assembly guide for the electron-detector](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20detector%20-%20parts%20overview%20v1-2%20electron%20version.pdf) 
+  * [detailed assembly instructions and list of required tools](https://github.com/ozel/DIY_particle_detector/wiki/Assembly-Instructions)
 
 
-Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used with ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their general efficiency for detecting gamma photons is quite low.  
+Both kinds of diodes, the BPW34 series in various plastic cases and the BPX61 with metal casing, have the same sensitive area (~7 mm^2). The physics of these sensors when used with ionizing radiation is explained in detail in the [article corresponding to this repository](https://doi.org/10.3390/s19194264). The section about figure 1 discusses why their efficiency for detecting gamma photons is quite low in general.  
 
 <img align="left" src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/BXP61_mircoscope.png" height="300">
 
 Mircoscope image of the Osram BPX61 diode on the left, the green scale indicates 2 mm. The sensitive area of the silicon chip is 2.65 x 2.65 mm^2. A bond wire from the anode pin on the right connects the top of the silicon chip (this side is also marked with a notch in the metal case, lower right corner). For detecting alpha particles, the glass window of this diode must be removed.    
-Further informations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
+Further instructions in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Diodes).
 
 <br>
 
@@ -91,61 +101,35 @@ Further informations in the [wiki](https://github.com/ozel/DIY_particle_detector
 
 ### General Requirements
 
-* An absolutely light-tight and electromagnetically shielding metal case is mandatory. Either a commercial one made of die casted aluminium (thick metal provides better immunity towards vibrations and prevents "microphonic effects") or an upcycled tin box for candies. 
-  See pictures above and the [schematic drawing](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/documentation/DIY%20particle%20detector%20schematic%20v1-2.pdf) for part numbers of specific aluminium cases that fit exactly to the shape of the circuit board.
-* 9 V battery. NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise, always use batteries if building the detector for the first time!)
-* Signal output is in the range of +/- 0.1 V and compatible with an audio/microphone input such as a headset connector of a mobile phone or laptop (or an oscilloscope if available)
+* An absolutely light-tight and electromagnetically shielding metal case is mandatory. Either a commercial one made of die casted aluminium (thick metal provides better immunity towards vibrations and prevents "microphonic effects") or an upcycled tin box for candies. Detailed recommendations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Enclosures).
+* 9 V [battery](https://github.com/ozel/DIY_particle_detector/wiki/Batteries). NIMH-type accumulators with a nominal value of 9.6 V work best (mains-connected power supplies would introduce too much noise, always use batteries if building the detector for the first time!)
+* Signal output is in the range of +/- 0.1 V and compatible with an audio/microphone input such as a [headset connector](https://github.com/ozel/DIY_particle_detector/wiki/Cables#connection-with-a-headset-socket) of a mobile phone or laptop (or an oscilloscope if available)
 * The alpha-spectrometer should be operated using a low-cost USB soundcard for best results, see the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards).
 * The connection cable should be shielded and not too long, recommendations in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Cables). 
-* Several reference measurements are provided in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). 
-  All have been recorded using the [blue CM108 USB soundcard](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards), sampling the input signal @ 48 kHz and 16-bit resolution.
 
 
-### Detector Signals of Radioactivity on an Oscilloscope 
-The screenshots below show typical output signals from both detector variants with arrows highlighting the signal and noise properties. The blue lines represent signals from individual particles, the grey lines are superpositions of earlier particle signals which triggered the oscilloscope as well. For better comparison, a beta & gamma radiation source (potassium salt, KCL) was used in both cases which does not emit alpha particles. The negative pulse with its steep downward edge is the main signal and is larger than the electronic noise. The trigger level must be set well below the noise range, which depends on the intensity of surrounding *electromagnetic interference* (EMI) radiation and stray light reaching into the shielding case of the detector. The short negative main signal pulse is followed by a wider positive overshoot which is proportional in size to the amplitude of the main signal. The overshoot is an effect of the amplifier circuit and also depends on the impedance matching from the detector output to the input of the measurement device. The employed oscilloscope features a default input impedance of 1 megaohm. Microphone and line-in inputs of sound cards (as described above) have considerably lower input impedances and pulse measurements will therefore show a larger signal overshoot. The alpha-spectrometer circuit was intentionally designed to produce this kind of a bi-polar signal with a lot of overshoot in order to mimic actual audio waves.
-
-* ***Electron-Detector***
-  ![](images/oscilloscope_pulse_electron-detector.png)
-  Main signal amplitudes can be typically well distinguished from electronic noise at about -50 mV (and lower) if the detector is well shielded against light and with low EMI (e.g. no cell phone or electro motor close by). The negative pulses are about 50 to 75 us wide with this circuit.
-  
-
-* ***Alpha-Spectrometer***
-  ![](images/oscilloscope_pulse_alpha-spectro.png)
-  Typical signal amplitudes of particles from the same beta/gamma radiation source are much lower compared to the electron-detector varaint. The electronic noise is much smaller as well and the width of pulses is between 1 and 2 ms. This circuit is optimised for large pulses from alpha particles which is heavy-ionizing radiation and therefore produces a lot more free charges in the sensor. The amplitude threshold which allows to distinguish between electrons (=smaller signal amplitude) and alpha particles (=larger signal amplitude) is at -8 mV in case of a typical oscilloscope with an input impedance of 1 megaohm. This threshold is lower in case of a sound card due to their lower input impedances. Please refer to [the scientific article](https://doi.org/10.3390/s19194264) for detailed information about the energy calibration in this case. 
-  
-If a hardware oscilloscope is not at hand, a **simple software oscilloscope** with good trigger funtionallity for sound cards and audio inputs of computers can be found here:
-https://github.com/ozel/WaveWatch/
-To run this program written in Processing, download Version 3 from www.processing.org and install the missing ‘Minim’ library via the ‘Sketch’ menu / ‘Import Library...’ / ‘Add Library...’.
-Download my version of the WaveWatch Processing sketch from https://github.com/ozel/WaveWatch/archive/master.zip, unzip and open the file WaveWatch-master/WaveWatch/WaveWatch.pde in Processing.
-For more sophisticated processing of the particle signals from radioactive objects like recording their energy spectrum please refer to the [software](#software) section below.
-
+### Detector Signals
+Typical signals from the electron-detector (left/top) and alpha-spectrometer (right/bottom) on an oscilloscope:
+<img width=400 src=https://raw.githubusercontent.com/ozel/DIY_particle_detector/master/images/oscilloscope_pulse_electron-detector.png> <img width=400 src=https://raw.githubusercontent.com/ozel/DIY_particle_detector/master/images/oscilloscope_pulse_alpha-spectro.png>     
+More details in the [wiki](https://github.com/ozel/DIY_particle_detector/wiki/Oscilloscope-Measurements).
 
 ## Software
-The software in this repository is provided under the open source BSD Licence.
+The open source software in this repository is provided under the terms of the BSD Licence.
 
-It consists of two parts:
-* Measurement recording, real-time display and counting of particle pulses
-* Data analysis of recorded measurements, providing calibrated energy spectra and time series histograms
+It consists of two parts (links to the wiki):
+* [Recording, real-time display and counting of particle pulses](https://github.com/ozel/DIY_particle_detector/wiki/Software#signal-display--pulse-counting)     
+  Different softwares for desktop computers as well as mobile devices are decsribed in the wiki.     
+  Most universal is a [web browser application](https://ozel.github.io/DIY_particle_detector/data_recording_software/webGui/) based on the Web Audio API available in modern browsers (recent Chrome and Firefox versions work best):     
+  <img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/webGui_screenshot.png" alt="A single pulse recorded by the web browser GUI." width="600">      
+  This acts essentially as a software oscilloscope with trigger functionality (red line = trigger level) reading small detector pulses directly from the microphone input or headset socket of a computer or mobile device.
 
-### Recording Software
-Two kinds of software for recording the voltage pulses are developed:
-
-* A [web browser application](https://ozel.github.io/DIY_particle_detector/data_recording_software/webGui/) based on the Web Audio API of modern browsers (recent Chrome and Firefox versions work best), compatible with mobile/smartphone and desktop operating systems.
-  For further notes on its implementation and usage please refer to [pulse_recorder.js](https://github.com/ozel/DIY_particle_detector/blob/master/data_recording_software/webGui/js/pulse_recorder.js). 
-  <img src="https://github.com/ozel/DIY_particle_detector/raw/master/images/webGui_screenshot.png" alt="A single pulse recorded by the web browser GUI." width="600">
-
-* A [python script](https://github.com/ozel/DIY_particle_detector/blob/master/data_recording_software/pulse_recorder.py). Ideal for longer measurements, e.g. over night. The reference measurements listed below have been taken with this software.
-
-### Data Analysis
-
-The recorded pulse data is saved in files (using Python's Pickle or the MessagePack format) by the software listed above and opened for further analysis by [analyse_and_plot_pulses.py](https://github.com/ozel/DIY_particle_detector/blob/master/data_analysis_and_reference_measurements/diode_detector/analyse_and_plot_pulses.py).
-This python script converts the measurement data into time series histograms and calibrated energy spectra.
+* [Data analysis of alpha-spectrometer measurements](https://github.com/ozel/DIY_particle_detector/wiki/Software#energy-spectra-from-alpha-particles), providing calibrated energy spectra and time series histograms
 
 ## Reference measurements and plots
 
-Several reference measurements have been taken and stored in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data).
-If this whole respository is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).
-The data files can be downloaded alternatively from this [Zenodo data archive](https://doi.org/10.5281/zenodo.3361764).
+Several reference measurements have been taken and stored in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). All have been recorded using the very low-cost [CM108 USB soundcard](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards), sampling the input signal @ 48 kHz and 16-bit resolution.     
+*If this whole respository is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).*
+Alternatively, the data files can be downloaded from this [Zenodo data archive](https://doi.org/10.5281/zenodo.3361764).
 
 Overview on reference measurements:
 
@@ -163,6 +147,8 @@ After a little introduction into the soldering of electronic components, the who
 * [Student Summer School of Barcelona Technoweek 2017](http://icc.ub.edu/congress/TechnoWeek2018/outreach_EN.php), [CERN news](https://home.cern/news/news/knowledge-sharing/summer-school-secondary-students-spain)
 * [S'Cool LAB Summer Camp 2018](https://indico.cern.ch/event/726779/timetable/) at CERN, [poster presentation, page 3](https://indico.cern.ch/event/726779/contributions/2991390/attachments/1697186/2732121/pdfjoiner.pdf)
 * [Gathering of Open Science Hardware 2018 in Shenzhen China](http://openhardware.science/gatherings/gosh-2018-2/), [workshop documentation](https://forum.openhardware.science/t/day-3-build-your-own-particle-detector-discover-natural-radioactivity/1468)
+
+*Notes and announcements of future workshops can be found in the **[Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*     
 
 ---
 
