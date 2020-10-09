@@ -1,11 +1,19 @@
 multi:
   alpha-spectrometer:
-    summary: A low-cost particle detector for measuring radioactivity.
+    summary: "Low-cost DIY particle detector for radioactivity: Alpha-spectrometer variant"
     bom: hardware/V1.2/bom/1-click-bom_alpha-spectrometer.csv
     gerbers: hardware/V1.2/gerbers
     readme: hardware/V1.2/bom/kitspace_readme_alpha-spectrometer.md
+    eda:
+        type: kicad
+        pcb: hardware/V1.2/DIY_detector.kicad_pcb
+        schematic: hardware/V1.2/DIY_detector.sch
   electron-detector:
-    summary: A low-cost particle detector for measuring radioactivity.
+    summary: "Low-cost DIY particle detector for radioactivity: Electron-detector variant"
     bom: hardware/V1.2/bom/1-click-bom_electron-detector.csv
     gerbers: hardware/V1.2/gerbers
     readme: hardware/V1.2/bom/kitspace_readme_electron-detector.md
+    eda:
+        type: kicad
+        pcb: hardware/V1.2/DIY_detector_electron-variant.kicad_pcb
+        schematic: hardware/V1.2/DIY_detector.sch
