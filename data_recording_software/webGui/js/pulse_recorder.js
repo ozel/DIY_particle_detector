@@ -136,16 +136,18 @@ class Oscilloscope {
       source.connect(this.analyser);
     }
 
-    //if (options.fftSize) { this.analyser.fftSize = options.fftSize }
-    this.analyser.fftSize = 4096 / 2;
+    this.mode = "electron"
+    this.n_samples = 256
+    this.analyser.fftSize = this.n_samples ; // even if no FFT is needed, this defines the sample buffer size received from the hardware
+    //this.x_scale=10
     this.analyser.smoothingTimeConstant = 0;
-    this.timeDomain = new Uint8Array(this.analyser.fftSize); //this.analyser.frequencyBinCount);
-    this.samples = new Float32Array(this.analyser.fftSize);
+    this.timeDomain = new Uint8Array(4096); //this.analyser.frequencyBinCount);
+    this.samples = new Float32Array(4096);
     this.drawRequest = 0;
     this.width = 0
     this.height = 0
-    this.threshold = -13000;
-    this.alpha_threshold = -1243000; //disabled
+    this.threshold = -8000;
+    this.alpha_threshold = -1243; //disabled
     this.data = [];
     this.downloadBlob = null;
     this.lastTime = null;
@@ -153,6 +155,8 @@ class Oscilloscope {
     this.waveforms = 0;
     this.alphas = 0;
     this.electrons = 0;
+
+    document.getElementById("trig_level").innerHTML = this.threshold
   }
 
   // begin default signal animation
@@ -161,9 +165,19 @@ class Oscilloscope {
     this.ctx.beginPath();
     this.ctx.clearRect(this.x0 +1, this.y0, this.ctx.canvas.width, this.ctx.canvas.height);
     this.ctx.stroke();
-
+    document.getElementById("trig_level").innerHTML = this.threshold
     console.log(this.threshold);
   }
+  
+  setScale(length, x_scale) {
+    this.analyser.fftSize = length;
+    //this.x_scale=x_scale
+    //this.width=length
+    this.n_samples=length
+    document.getElementById("rate").innerHTML = "sampling:<br> " + this.analyser.fftSize + "@"+ this.rate/1000 + " kHz";
+
+  }
+  
   animate(ctx, x0, y0, width, height) {
     if (this.drawRequest) {
       throw new Error("Oscilloscope animation is already running");
@@ -221,13 +235,14 @@ class Oscilloscope {
   }
 
   update_stats() {
-    document.getElementById("statistic").innerHTML =
-      "sum: " +
-      this.waveforms +
-      "  &emsp;&emsp;&emsp;  e&#8315;: " +
-      this.electrons +
-      "&emsp;&emsp;&emsp;   &alpha;: " +
-      this.alphas;
+    document.getElementById("stats_total").innerHTML = " " + this.waveforms;
+    if (scope.mode == "alpha") {
+      document.getElementById("stats_ae").innerHTML =
+        "&nbsp;e&#8315;: " +
+        this.electrons +
+        "&emsp;&emsp;&emsp;   &alpha;: " +
+        this.alphas;
+    }
   }
   // draw signal
   draw(
@@ -241,13 +256,13 @@ class Oscilloscope {
 
     //workaround for missing getFloatTimeDomainData() in Safari
     if (this.analyser && typeof this.analyser.getFloatTimeDomainData == "undefined") {
-      //console.log("No native support for analyser.getFloatTimeDomainData()")
+      console.log("No native support for analyser.getFloatTimeDomainData()")
       //if(this.timeDomain.length !=  this.samples.length) {
         //console.log("array length missmatch, this.timeDomain:", this.timeDomain.length, " this.samples:", this.samples.length)
       //}
       this.analyser.getByteTimeDomainData(this.timeDomain);
       // scales unsigned 8 bit to signed 16 bit... introduces quantisation errors!
-      for (var i = 0, imax = this.samples.length; i < imax; i++) {
+      for (var i = 0, imax = this.n_samples; i < imax; i++) {
         this.samples[i] = (this.timeDomain[i] - 128) * 0.0078125;
       }
       // code from https://github.com/mohayonao/get-float-time-domain-data
@@ -267,8 +282,8 @@ class Oscilloscope {
     //   //getFloatTimeDomainData(this.samples);
     // }
     
-    const x_scale = 1;
-    const step = width / this.samples.length * x_scale;
+    //const x_scale = 1;
+    const step =  (this.width  / this.n_samples) 
     const y_scale = 1;
 
     var min = this.samples.reduce((a, b) => Math.min(a, b));
@@ -297,7 +312,7 @@ class Oscilloscope {
       // drawing loop
       var oldy = y0 + height / 2;
       ctx.moveTo(x0, oldy);
-      for (let i = 0; i < this.samples.length; i += step) {
+      for (let i = 0; i < this.n_samples; i += 1) {
         const percent = this.samples[i] * y_scale
         const x = x0 + i * step;
         const y = y0 + height / 2 + this.samples[i] * -1 * height / 2;
@@ -382,7 +397,8 @@ ctx.lineWidth = 2;
 ctx.font = "20px monospace";
 ctx.fillStyle = "orange";
 ctx.fillText("Waiting for audio input... please allow microphone usage.", 80, 160);
-ctx.fillText("Hit the 'reset' button if waveforms do not appear automatically.", 80, 190);
+ctx.fillText("Try different microphone input volume settings if available.", 80, 190);
+ctx.fillText("Hit the 'reset' button if waveforms do not appear automatically.", 80, 220);
 ctx.strokeStyle = "#ffffff";
 
 
@@ -411,15 +427,20 @@ function streamCallback(stream) {
 
   // start default animation loop
   scope.animate(ctx, 10, 0, 1024, 600);
-
-
+  
   var rate = "?"
   if (typeof audioCtx.sampleRate == "number") {
-        // replacement from https://github.com/mohayonao/get-float-time-domain-data
-        rate = audioCtx.sampleRate
+          // replacement from https://github.com/mohayonao/get-float-time-domain-data
+          scope.rate = audioCtx.sampleRate
   }
 
-  document.getElementById("rate").innerHTML = "sample rate:<br> " + rate/1000 + " kHz";
+
+  if (scope.mode == "electron") {
+    document.getElementById("stats_ae").style.display = "none"; //disable alpha/electron counter
+    scope.setScale(256, 8)
+    document.getElementById('mode').options[0].selected = 'selected';
+    document.getElementById("saveData").style.display = "none";
+  }
 }
 
 navigator.mediaDevices
@@ -460,8 +481,35 @@ document.getElementById("saveData").addEventListener("click", function(e) {
       //saveAs(blob, "test.msgp");
     }
   });
+  
+document.getElementById("mode").addEventListener("change", function(e) {
+    console.log('selected '+e.target.value);
+    if (e.target.value == 'alpha') {
+      scope.setScale(2048, 1)
+      scope.mode="alpha"
+      scope.threshold = -300;
+      document.getElementById("stats_ae").style.display = "block";
+      document.getElementById("saveData").style.display = "block";
+      
+    } else {
+      scope.setScale(256, 8)
+      scope.mode="electron"
+      scope.threshold = -8000;
+      document.getElementById("stats_ae").style.display = "none";
+      document.getElementById("saveData").style.display = "none";
+    }
+    document.getElementById("trig_level").innerHTML = scope.threshold
+    //blank
+    scope.ctx.beginPath();
+    scope.ctx.clearRect(this.x0 +1, this.y0, this.ctx.canvas.width, this.ctx.canvas.height);
+    scope.ctx.stroke();
+ // navigator.mediaDevices
+ // .getUserMedia(constraints)
+ // .then(streamCallback)
+ // .catch(errorCallback);
+  });
 
-  document.getElementById("reset").addEventListener("click", function(e) {
+document.getElementById("reset").addEventListener("click", function(e) {
     scope.data = [];
     scope.downloadBlob = null;
     scope.lastTime = null;
@@ -478,23 +526,40 @@ document.getElementById("saveData").addEventListener("click", function(e) {
 
   });
 
-  document.getElementById("thlUp").addEventListener("click", function(e) {
-    scope.setThreshold(1000);
+document.getElementById("thlUp").addEventListener("click", function(e) {
+    if (scope.mode == "electron") {
+      scope.setThreshold(500);
+    } else {
+      scope.setThreshold(50);
+    }
   });
 
-  document.getElementById("thlDown").addEventListener("click", function(e) {
-    scope.setThreshold(-1000);
+document.getElementById("thlDown").addEventListener("click", function(e) {
+    if (scope.mode == "electron") {
+      scope.setThreshold(-500);
+    } else {
+      scope.setThreshold(-50);
+    }
   });
 
-  function checkKey(e) {
+function checkKey(e) {
     e = e || window.event;
     if (e.key == "+" || e.key == "ArrowUp") {
-      scope.setThreshold(100);
+      if (scope.mode == "electron") {
+        scope.setThreshold(500);
+      } else {
+        scope.setThreshold(50);
+      }
     } else if (e.key == "-" || e.key == "ArrowDown") {
       // down arrow
-      scope.setThreshold(-100);
+      if (scope.mode == "electron") {
+        scope.setThreshold(-500);
+      } else {
+        scope.setThreshold(-50);
+      }
     }
-  }
-  //this.ctx.addEventListener('keydown',checkKey,false);
-  document.onkeydown = checkKey;
+}
+  
+//this.ctx.addEventListener('keydown',checkKey,false);
+document.onkeydown = checkKey;
 

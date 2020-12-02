@@ -7,24 +7,37 @@
   <script src="js/FileSaver.js"></script>
 </head>
 <body>
-<div class="header">
-  <div>DIY Particle Detector <br> <i>Pulse Recorder</i></div>
-</div>
 <div class="main">
   <div class="left">
+    <div class="header">
+      <div>DIY Particle Detector <br> <i>Pulse Recorder</i></div>
+    </div>
     <div class="left">Recording since:&nbsp;</div>
     <div id='time'  class="left"> 00:00:00</div><br>
-    <div>Triggered pulses:</div>
-    <div id="statistic" class="left">sum: 0 &emsp;&emsp;&emsp;  e&#8315;: 0 &emsp;&emsp;&emsp;   &alpha;: 0</div>
+    <div class="left">Recorded pulses:&nbsp;</div><div id='stats_total' class="left"> 0</div><br>
+    <div id="stats_ae" style="display:none" class="left">&nbsp;e&#8315;: 0 &emsp;&emsp;&emsp;   &alpha;: 0</div>
   </div>
   <div class="right"> 
-    <div class="right" id="rate">sample rate:<br>?</div>
-    Trigger:<input id="thlUp" class="triggerButton" type="button" value="&#8679;" /><input id="thlDown" class="triggerButton" type="button" value="&#8681;" />
-  </div>
-  
-  <div class="right">
-    <input id="reset" class="button" type="button" value="reset" />
-    <input id="saveData" class="button" type="button" value="save" />
+     <div class="rightTop" >Mode: 
+         <select id="mode" name="mode">
+          <option value="electron" selected="selected">Electron Detector</option>
+          <option value="alpha">Alpha Spectrometer</option>
+         </select>
+        <div class="right" style="margin-left:47px;margin-right:21px;margin-top:-3px;padding:0px;with:80;font-size:xx-small;font-style:italic;text-align:center">O.Keller<br> 2020-12-02</div>  
+    </div>
+    <div class="right" id="rate">sampling:<br>?</div>
+      <div class="right">
+        <input id="thlUp" class="triggerButton" type="button" value="&nbsp;&#8679;&nbsp;" />
+        <div id='trig_level' class="trigLevel">0</div>
+        <input id="thlDown" class="triggerButton" type="button" value="&nbsp;&#8681;&nbsp;" />
+      </div>
+      <div class="right">Trigger<br>level:</div>
+      <div class="right">
+        <input id="reset" class="button" type="button" value="reset" />
+      </div>
+      <div class="right">
+        <input id="saveData" class="button" style="display:none" type="button" value="save" />
+      </div>
   </div>
 </div>
 <div id="pulse_scope">
