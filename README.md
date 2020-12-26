@@ -49,7 +49,7 @@ Black lines in the upper area represent electronic noise, detected signal pulses
 
 The energy spectrum on the right - derived from the size of signal pulses - was taken from an old ceramics pendant of the Majolika manufacture (Karlsruhe/Germany) - without vacuum pump, in normal ambient air! 
 
-The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More detais on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
+The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More details on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
 
 <br>
 
@@ -61,7 +61,7 @@ The characteristic alpha energies of the uranium isotopes are about 1 MeV lower 
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_open.jpg" height="313"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_closed.jpg" height="313">
 
 More photos of finished builds from users around the world can be found in the [picture gallery](https://github.com/ozel/DIY_particle_detector/wiki/Gallery).     
-The open hardware design in this repository is relased under the terms of the CERN Open Hardware Licence V1.2.
+The open hardware design in this repository is released under the terms of the CERN Open Hardware Licence V1.2.
 Usage guidelines and legal requirements for users of this license can be found [here](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-1.2).
 ### Detector Variants
 The same circuit board is used with two partially different sets of components in two assembly variants.
@@ -128,7 +128,7 @@ It consists of two parts (links to the wiki):
 ## Reference measurements and plots
 
 Several reference measurements have been taken and stored in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). All have been recorded using the very low-cost [CM108 USB soundcard](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards), sampling the input signal @ 48 kHz and 16-bit resolution.     
-*If this whole respository is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).*
+*If this whole repository is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).*
 Alternatively, the data files can be downloaded from this [Zenodo data archive](https://doi.org/10.5281/zenodo.3361764).
 
 Overview on reference measurements:
