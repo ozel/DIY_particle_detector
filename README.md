@@ -13,11 +13,19 @@
 A mobile low-cost spectrometer for measuring ionising radiation like alpha particles and electrons (energy range: 33 keV to 8 MeV).   
 It's an experimental educational tool and citizen science device made for exploring natural and synthetic sources of radioactivity such as stones, airborne radon, potassium-rich salt or food and every-day objects (Uranium glass, ceramics, old Radium watches etc.).
 
-*The main project documentation has been moved to the **[Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*     
-A summary of the main aspects can be found below.    
-The hardware design is licenced using the [CERN Open Hardware License](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/CERN_OPEN_HARDWARE_LICENSE_OHL_v_1_2.txt) and the open source software is provided under the terms of the [BSD licence](https://github.com/ozel/DIY_particle_detector/blob/master/LICENSE).
+<u>*The main project documentation can be found in **[the Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*</u>   
 
-Overview:
+A summary of the main aspects can be found below.    
+The hardware design and documentation is licenced under the [CERN Open Hardware License](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/CERN_OPEN_HARDWARE_LICENSE_OHL_v_1_2.txt).   
+The open source software is provided under the terms of the [BSD licence](https://github.com/ozel/DIY_particle_detector/blob/master/LICENSE).
+
+This project received funding and supported by [CERN](http://home.cern) and the [Fellow FreiesWissen program](https://github.com/ozel/DIY_particle_detector/wiki/Fellow-FreiesWissen-Project).
+
+<img src="https://upload.wikimedia.org/wikipedia/en/a/ae/CERN_logo.svg" height="51"> &#8195; <img src="https://www.wikimedia.de/wp-content/uploads/2019/09/kachellogo-fellow-Programm.png" height="51">   
+
+
+
+***Project Overview:***
 * [How does it work?](#how-does-it-work)
 * [Hardware](#hardware)
     * [Two variants](#detector-variants): Electron-Detector (easier, lower costs) and Alpha-Spectrometer (more advanced)
@@ -27,7 +35,7 @@ Overview:
 * [Reference measurements and plots](#reference-measurements-and-plots)
 * [Workshops](#workshops) with high-school students, teachers and makers
 
-*More info in the **[Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*     
+*Much more detailed information is available in **[the project Wiki](https://github.com/ozel/DIY_particle_detector/wiki)**.*     
 
 ## How does it work?
 Tiny amounts of electrical charge are generated in repurposed photodiodes by impinging particles. The charges form currents which are amplified and converted into voltage pulses that are compatible with audio/microphone signal inputs.
@@ -49,7 +57,7 @@ Black lines in the upper area represent electronic noise, detected signal pulses
 
 The energy spectrum on the right - derived from the size of signal pulses - was taken from an old ceramics pendant of the Majolika manufacture (Karlsruhe/Germany) - without vacuum pump, in normal ambient air! 
 
-The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More detais on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
+The characteristic alpha energies of the uranium isotopes are about 1 MeV lower than the actual values due to internal absorption caused by the transparent surface coating on top of the orange uranium-based glaze. More details on the energy calibration below and in the [paper](https://doi.org/10.3390/s19194264).
 
 <br>
 
@@ -61,7 +69,7 @@ The characteristic alpha energies of the uranium isotopes are about 1 MeV lower 
 <img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_open.jpg" height="313"><img src="https://github.com/ozel/DIY_particle_detector/raw/master/hardware/V1.2/documentation/Alpha_spectrometer_in_candy_box_closed.jpg" height="313">
 
 More photos of finished builds from users around the world can be found in the [picture gallery](https://github.com/ozel/DIY_particle_detector/wiki/Gallery).     
-The open hardware design in this repository is relased under the terms of the CERN Open Hardware Licence V1.2.
+The open hardware design in this repository is released under the terms of the CERN Open Hardware Licence V1.2.
 Usage guidelines and legal requirements for users of this license can be found [here](https://ohwr.org/project/cernohl/wikis/Documents/CERN-OHL-version-1.2).
 ### Detector Variants
 The same circuit board is used with two partially different sets of components in two assembly variants.
@@ -128,7 +136,7 @@ It consists of two parts (links to the wiki):
 ## Reference measurements and plots
 
 Several reference measurements have been taken and stored in [data_analysis_and_reference_measurements/diode_detector/data](https://github.com/ozel/DIY_particle_detector/tree/master/data_analysis_and_reference_measurements/diode_detector/data). All have been recorded using the very low-cost [CM108 USB soundcard](https://github.com/ozel/DIY_particle_detector/wiki/Soundcards), sampling the input signal @ 48 kHz and 16-bit resolution.     
-*If this whole respository is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).*
+*If this whole respoitory is cloned using git, the [git LFS](https://help.github.com/en/articles/duplicating-a-repository#mirroring-a-repository-that-contains-git-large-file-storage-objects) extension must be used to get as well the large data files (~ 1 GB).*
 Alternatively, the data files can be downloaded from this [Zenodo data archive](https://doi.org/10.5281/zenodo.3361764).
 
 Overview on reference measurements:
