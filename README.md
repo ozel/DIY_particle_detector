@@ -19,7 +19,7 @@ A summary of the main aspects can be found below.
 The hardware design and documentation is licenced under the [CERN Open Hardware License](https://github.com/ozel/DIY_particle_detector/blob/master/hardware/V1.2/CERN_OPEN_HARDWARE_LICENSE_OHL_v_1_2.txt).   
 The open source software is provided under the terms of the [BSD licence](https://github.com/ozel/DIY_particle_detector/blob/master/LICENSE).
 
-This project received funding and supported by [CERN](http://home.cern) and the [Fellow FreiesWissen program](https://github.com/ozel/DIY_particle_detector/wiki/Fellow-FreiesWissen-Project).
+This project received funding and support by [CERN](http://home.cern) and the [Fellow FreiesWissen program](https://github.com/ozel/DIY_particle_detector/wiki/Fellow-FreiesWissen-Project).
 
 <img src="https://upload.wikimedia.org/wikipedia/en/a/ae/CERN_logo.svg" height="51"> &#8195; <img src="https://www.wikimedia.de/wp-content/uploads/2019/09/kachellogo-fellow-Programm.png" height="51">   
 
